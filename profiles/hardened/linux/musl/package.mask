@@ -1,0 +1,9 @@
+# Copyright 1999-2014 Gentoo Foundation.
+# Distributed under the terms of the GNU General Public License v2
+# $Header: /var/cvsroot/gentoo-x86/profiles/hardened/linux/musl/package.mask,v 1.2 2014/07/23 12:09:57 blueness Exp $
+
+sys-libs/uclibc
+sys-libs/glibc
+#
+dev-libs/elfutils
+sys-libs/pam

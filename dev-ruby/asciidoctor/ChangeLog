@@ -1,0 +1,12 @@
+# ChangeLog for dev-ruby/asciidoctor
+# Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-ruby/asciidoctor/ChangeLog,v 1.2 2014/07/26 19:38:33 mrueg Exp $
+
+  26 Jul 2014; Manuel Rüger <mrueg@gentoo.org> asciidoctor-0.1.4.ebuild:
+  Add ruby20 target.
+
+*asciidoctor-0.1.4 (13 Dec 2013)
+
+  13 Dec 2013; Manuel Rüger <mrueg@gentoo.org> +asciidoctor-0.1.4.ebuild,
+  +metadata.xml:
+  Import from dev-zero's overlay. Added small changes.

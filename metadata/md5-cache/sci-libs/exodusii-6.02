@@ -1,0 +1,13 @@
+DEFINED_PHASES=compile configure install prepare test
+DEPEND=sci-libs/netcdf[hdf5] sys-devel/make >=dev-util/cmake-2.8.9 userland_GNU? ( >=sys-apps/findutils-4.4.0 )
+DESCRIPTION=Model developed to store and retrieve transient data for finite element analyses
+EAPI=5
+HOMEPAGE=http://sourceforge.net/projects/exodusii/
+IUSE=static-libs test
+KEYWORDS=~amd64 ~x86 ~amd64-linux ~x86-linux
+LICENSE=BSD
+RDEPEND=sci-libs/netcdf[hdf5]
+SLOT=0
+SRC_URI=mirror://sourceforge/project/exodusii/exodus-6.02.tar.gz
+_eclasses_=cmake-utils	10b6a99f9058ac1b830d00b3421f04e4	eutils	06133990e861be0fe60c2b428fd025d9	flag-o-matic	9836bc51856bcaffac53c9cd4b59a8be	multilib	3bf24e6abb9b76d9f6c20600f0b716bf	toolchain-funcs	0f1760274637a138b99bb649202ea402
+_md5_=4b6c213e0dc98a74ffbcd462aa9fe416

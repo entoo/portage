@@ -1,0 +1,33 @@
+# ChangeLog for net-p2p/litecoind
+# Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/net-p2p/litecoind/ChangeLog,v 1.5 2014/05/26 21:28:48 blueness Exp $
+
+*litecoind-0.8.7.1 (26 May 2014)
+
+  26 May 2014; Anthony G. Basile <blueness@gentoo.org>
+  +litecoind-0.8.7.1.ebuild:
+  Version bump, bug #508934
+
+*litecoind-0.8.6.1-r1 (25 Feb 2014)
+
+  25 Feb 2014; Anthony G. Basile <blueness@gentoo.org> +files/litecoin.initd-r1,
+  +litecoind-0.8.6.1-r1.ebuild:
+  Add imrpoved initd, bug #500602
+
+  08 Jan 2014; Mike Frysinger <vapier@gentoo.org> litecoind-0.8.5.3_rc3.ebuild,
+  litecoind-0.8.6.1.ebuild:
+  Inherit the user eclass for enewuser/etc...
+
+*litecoind-0.8.6.1 (28 Dec 2013)
+
+  28 Dec 2013; Anthony G. Basile <blueness@gentoo.org>
+  +litecoind-0.8.6.1.ebuild:
+  Version bump, bug #494942
+
+*litecoind-0.8.5.3_rc3 (01 Dec 2013)
+
+  01 Dec 2013; Anthony G. Basile <blueness@gentoo.org>
+  +litecoind-0.8.5.3_rc3.ebuild, +files/litecoin.conf, +files/litecoin.confd,
+  +files/litecoin.initd, +files/litecoin.service,
+  +files/litecoin-sys_leveldb.patch, +files/litecoind.logrotate, +metadata.xml:
+  Initial commit

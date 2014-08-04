@@ -1,0 +1,24 @@
+# ChangeLog for dev-perl/Text-BibTeX
+# Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-perl/Text-BibTeX/ChangeLog,v 1.4 2014/03/28 15:32:39 mrueg Exp $
+
+  28 Mar 2014; Manuel Rüger <mrueg@gentoo.org> -Text-BibTeX-0.66.ebuild,
+  -Text-BibTeX-0.670.0.ebuild:
+  Cleanup old.
+
+*Text-BibTeX-0.690.0 (06 Mar 2014)
+
+  06 Mar 2014; Manuel Rüger <mrueg@gentoo.org> +Text-BibTeX-0.690.0.ebuild:
+  Version bump.
+
+*Text-BibTeX-0.670.0 (27 Feb 2014)
+
+  27 Feb 2014; Manuel Rüger <mrueg@gentoo.org> +Text-BibTeX-0.670.0.ebuild:
+  Version bump.
+
+*Text-BibTeX-0.66 (03 Aug 2013)
+
+  03 Aug 2013; Manuel Rüger <mrueg@gentoo.org> +Text-BibTeX-0.66.ebuild,
+  +metadata.xml:
+  Initial ebuild. Ebuild by Christopher Schwan, Michael Schindhelm and Markus
+  Oehme. Fixes bug #386811

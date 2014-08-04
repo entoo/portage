@@ -1,0 +1,21 @@
+# ChangeLog for dev-ruby/afm
+# Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-ruby/afm/ChangeLog,v 1.4 2014/05/14 23:53:35 mrueg Exp $
+
+*afm-0.2.0_p20130408-r1 (14 May 2014)
+
+  14 May 2014; Manuel Rüger <mrueg@gentoo.org> +afm-0.2.0_p20130408-r1.ebuild,
+  afm-0.2.0_p20130408.ebuild:
+  Add ruby21 target. Remove ruby18 target.
+
+  15 Nov 2013; Hans de Graaff <graaff@gentoo.org> afm-0.2.0_p20130408.ebuild:
+  Fix the gemspec version to something rubygems understands.
+
+  15 Nov 2013; Hans de Graaff <graaff@gentoo.org> afm-0.2.0_p20130408.ebuild:
+  Add jruby needed for pdf-reader.
+
+*afm-0.2.0_p20130408 (14 Nov 2013)
+
+  14 Nov 2013; Manuel Rüger <mrueg@gentoo.org> +afm-0.2.0_p20130408.ebuild,
+  +metadata.xml:
+  Initial version.

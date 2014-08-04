@@ -1,0 +1,17 @@
+# ChangeLog for games-emulation/pcsxr
+# Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/games-emulation/pcsxr/ChangeLog,v 1.3 2014/05/15 16:39:28 ulm Exp $
+
+  15 May 2014; Ulrich Müller <ulm@gentoo.org> pcsxr-1.9.94.ebuild:
+  Fix USE dependency on media-libs/libsdl, "audio" USE flag was renamed to
+  "sound", bug 357661.
+
+  11 Dec 2013; Michał Górny <mgorny@gentoo.org> pcsxr-1.9.94.ebuild:
+  Pass missing --datarootdir.
+
+*pcsxr-1.9.94 (11 Dec 2013)
+
+  11 Dec 2013; Michał Górny <mgorny@gentoo.org>
+  +files/pcsxr-1.9.94-disable-sdl2.patch,
+  +files/pcsxr-1.9.94-install-paths.patch, +metadata.xml, +pcsxr-1.9.94.ebuild:
+  Introduce an ebuild for pcsxr, the forked PSX emu. Bug #492936.

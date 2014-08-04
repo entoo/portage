@@ -1,0 +1,13 @@
+DEFINED_PHASES=compile configure install prepare setup test
+DEPEND=postgres? ( dev-db/postgresql-base ) snmp? ( net-analyzer/net-snmp ) dev-libs/libpcre dev-libs/openssl:0 valgrind? ( dev-util/valgrind ) sys-devel/make >=dev-util/cmake-2.8.9 userland_GNU? ( >=sys-apps/findutils-4.4.0 )
+DESCRIPTION=High performance PPTP, PPPoE and L2TP server
+EAPI=5
+HOMEPAGE=http://accel-ppp.sourceforge.net/
+IUSE=debug doc postgres radius shaper snmp valgrind
+KEYWORDS=~amd64 ~x86
+LICENSE=GPL-2
+RDEPEND=postgres? ( dev-db/postgresql-base ) snmp? ( net-analyzer/net-snmp ) dev-libs/libpcre dev-libs/openssl:0
+SLOT=0
+SRC_URI=mirror://sourceforge/accel-ppp/accel-ppp-1.7.3.tar.bz2
+_eclasses_=cmake-utils	10b6a99f9058ac1b830d00b3421f04e4	eutils	06133990e861be0fe60c2b428fd025d9	flag-o-matic	9836bc51856bcaffac53c9cd4b59a8be	linux-info	2b8c53f6065bdee2d757472215a3088f	multilib	3bf24e6abb9b76d9f6c20600f0b716bf	toolchain-funcs	0f1760274637a138b99bb649202ea402	versionator	cd0bcdb170807e4a1984115e9d53a26f
+_md5_=9c0d29eb850609365444d51a145f40b1

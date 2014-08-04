@@ -1,0 +1,16 @@
+# ChangeLog for dev-php/phpDocumentor
+# Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-php/phpDocumentor/ChangeLog,v 1.2 2014/02/17 21:59:30 mabi Exp $
+
+*phpDocumentor-2.3.0 (17 Feb 2014)
+
+  17 Feb 2014; Matti Bickel <mabi@gentoo.org> +phpDocumentor-2.3.0.ebuild,
+  phpDocumentor-2.2.0.ebuild:
+  version bump. update RDEPEND to include php extensions as stated by the README
+
+*phpDocumentor-2.2.0 (08 Jan 2014)
+
+  08 Jan 2014; Matti Bickel <mabi@gentoo.org> +files/channel.xml, +metadata.xml,
+  +phpDocumentor-2.2.0.ebuild:
+  initial version, intended as an update to dev-php/PEAR-PhpDocumentor; note the
+  use of bundled libraries we do not provide in-tree
