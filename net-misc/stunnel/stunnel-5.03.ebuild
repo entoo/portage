@@ -1,22 +1,22 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/stunnel/stunnel-4.56-r2.ebuild,v 1.10 2014/03/19 13:51:44 ago Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-misc/stunnel/stunnel-5.03.ebuild,v 1.1 2014/08/08 11:20:58 blueness Exp $
 
 EAPI="5"
 
 inherit ssl-cert eutils systemd user
 
 DESCRIPTION="TLS/SSL - Port Wrapper"
-HOMEPAGE="http://stunnel.mirt.net/"
-SRC_URI="ftp://ftp.stunnel.org/stunnel/${P}.tar.gz"
+HOMEPAGE="http://www.stunnel.org/index.html"
+SRC_URI="http://www.stunnel.org/downloads/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="alpha amd64 arm hppa ia64 ppc ppc64 ~s390 sparc x86 ~amd64-linux ~arm-linux ~x86-linux ~ppc-macos ~x86-macos"
-IUSE="ipv6 selinux tcpd xforward listen-queue"
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~ppc ~ppc64 ~s390 ~sparc ~x86 ~amd64-linux ~arm-linux ~x86-linux ~ppc-macos ~x86-macos"
+IUSE="ipv6 selinux tcpd"
 
 DEPEND="tcpd? ( sys-apps/tcp-wrappers )
-	>=dev-libs/openssl-0.9.8k"
+	dev-libs/openssl"
 RDEPEND="${DEPEND}
 	selinux? ( sec-policy/selinux-stunnel )"
 
@@ -26,9 +26,6 @@ pkg_setup() {
 }
 
 src_prepare() {
-	use xforward && epatch "${FILESDIR}/${P}-xforwarded-for.patch"
-	use listen-queue && epatch "${FILESDIR}/${P}-listen-queue.patch"
-
 	# Hack away generation of certificate
 	sed -i -e "s/^install-data-local:/do-not-run-this:/" \
 		tools/Makefile.in || die "sed failed"
@@ -57,11 +54,11 @@ src_install() {
 		tools/importCA.html
 
 	insinto /etc/stunnel
-	doins "${FILESDIR}"/stunnel.conf
-	newinitd "${FILESDIR}"/stunnel.initd-start-stop-daemon stunnel
+	newins "${FILESDIR}"/stunnel.conf-r1 stunnel.conf
+	newinitd "${FILESDIR}"/stunnel.rc7 stunnel
 
 	systemd_dounit "${S}/tools/stunnel.service"
-	systemd_newtmpfilesd "${FILESDIR}"/stunnel.tmpfiles.conf stunnel.conf
+	systemd_newtmpfilesd "${FILESDIR}"/stunnel.tmpfiles.conf-r1 stunnel.conf
 }
 
 pkg_postinst() {

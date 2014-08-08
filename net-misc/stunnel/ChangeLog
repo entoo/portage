@@ -1,6 +1,21 @@
 # ChangeLog for net-misc/stunnel
 # Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/stunnel/ChangeLog,v 1.174 2014/07/05 12:57:55 ago Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-misc/stunnel/ChangeLog,v 1.177 2014/08/08 11:56:09 blueness Exp $
+
+  08 Aug 2014; Anthony G. Basile <blueness@gentoo.org> -files/stunnel.conf,
+  -files/stunnel.initd-start-stop-daemon, -files/stunnel.tmpfiles.conf:
+  Remove older config files
+
+  08 Aug 2014; Anthony G. Basile <blueness@gentoo.org>
+  -files/stunnel-3.26-gentoo.diff, -files/stunnel-4.44-listen-queue.diff,
+  -files/stunnel-4.44-xforwarded-for.diff, -stunnel-3.26.ebuild,
+  -stunnel-4.44.ebuild, -stunnel-4.56-r2.ebuild, metadata.xml:
+  Remove older vulnerable versions
+
+*stunnel-5.03 (08 Aug 2014)
+
+  08 Aug 2014; Anthony G. Basile <blueness@gentoo.org> +stunnel-5.03.ebuild:
+  Version bump
 
   05 Jul 2014; Agostino Sarubbo <ago@gentoo.org> stunnel-5.02.ebuild:
   Stable for sparc, wrt bug #503506
