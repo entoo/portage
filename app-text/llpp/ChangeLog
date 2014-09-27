@@ -1,6 +1,18 @@
 # ChangeLog for app-text/llpp
 # Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-text/llpp/ChangeLog,v 1.60 2014/07/21 23:08:55 xmw Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-text/llpp/ChangeLog,v 1.63 2014/08/27 12:26:58 ago Exp $
+
+  27 Aug 2014; Agostino Sarubbo <ago@gentoo.org> llpp-17_p20140112.ebuild:
+  Stable for ppc, wrt bug #472532
+
+  27 Aug 2014; Patrick Lauer <patrick@gentoo.org> metadata.xml:
+  Remove unneeded useflag description from metadata.xml
+
+*llpp-20_p20140818 (25 Aug 2014)
+
+  25 Aug 2014; Michael Weber <xmw@gentoo.org> +files/llpp-20-WM_CLASS.patch,
+  +llpp-20_p20140818.ebuild, metadata.xml:
+  Version bump, prepare for upcoming USE=egl
 
 *llpp-19 (21 Jul 2014)
 

@@ -1,6 +1,48 @@
 # ChangeLog for sys-boot/grub
 # Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-boot/grub/ChangeLog,v 1.312 2014/06/22 18:02:08 floppym Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-boot/grub/ChangeLog,v 1.319 2014/09/24 21:12:02 floppym Exp $
+
+  24 Sep 2014; Mike Gilbert <floppym@gentoo.org> grub-2.02_beta2-r2.ebuild:
+  Stable on amd64, bug 522314.
+
+  16 Sep 2014; Mike Gilbert <floppym@gentoo.org> grub-2.02_beta2-r2.ebuild,
+  grub-9999-r1.ebuild:
+  Always download/symlink unifont, bug 522956.
+
+*grub-2.02_beta2-r2 (10 Sep 2014)
+
+  10 Sep 2014; Mike Gilbert <floppym@gentoo.org>
+  +files/2.02_beta2/0006-change-stop-condition-to-avoid-infinite-loops.patch,
+  +files/2.02_beta2/0007-Improve-LVM-logical_volumes-string-matching.patch,
+  +files/2.02_beta2/0008-Fix-an-infinite-loop-in-grub-mkconfig.patch,
+  +files/2.02_beta2/0009-Fix-incorrect-address-reference-in-btrfs.patch,
+  +grub-2.02_beta2-r2.ebuild, -grub-2.02_beta2-r1.ebuild:
+  More backports, bug 522428.
+
+  10 Sep 2014; Mike Gilbert <floppym@gentoo.org> grub-2.02_beta2-r1.ebuild,
+  grub-2.02_beta2.ebuild, grub-9999-r1.ebuild:
+  Add build-time dep on freetype for coreboot, qemu, ieee1275 and loongson. Bug
+  522464 by Stuart Shelton.
+
+*grub-2.02_beta2-r1 (09 Sep 2014)
+
+  09 Sep 2014; Mike Gilbert <floppym@gentoo.org> +files/2.02_beta2/0001-Makefile
+  .util.def-Link-grub-ofpathname-with-zfs-libs.patch, +files/2.02_beta2/0002-gru
+  b-install-support-for-partitioned-partx-loop-devi.patch,
+  +files/2.02_beta2/0003-Fix-grub-probe-0-option.patch, +files/2.02_beta2/0004-F
+  ix-partmap-cryptodisk-and-abstraction-handling-in-g.patch,
+  +files/2.02_beta2/0005-Fix-typo-gettext_print-instead-of-gettext_printf.patch,
+  +grub-2.02_beta2-r1.ebuild:
+  Backport several patches to resolve issues with grub-probe and grub-mkconfig.
+  Bug 522428, thanks to Coacher.
+
+  09 Sep 2014; Mike Gilbert <floppym@gentoo.org>
+  +files/grub-2.02_beta2-libzfs.patch, grub-2.02_beta2.ebuild:
+  Backport build fix for when both device-mapper and libzfs are enabled. Bug
+  496608.
+
+  07 Sep 2014; Richard Freeman <rich0@gentoo.org> grub-2.02_beta2.ebuild:
+  amd64 stable - 522314
 
   22 Jun 2014; Mike Gilbert <floppym@gentoo.org> grub-2.02_beta2.ebuild,
   grub-9999-r1.ebuild:

@@ -1,6 +1,29 @@
 # ChangeLog for net-misc/asterisk
 # Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/asterisk/ChangeLog,v 1.491 2014/08/20 12:26:20 chainsaw Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-misc/asterisk/ChangeLog,v 1.495 2014/09/20 17:55:13 ago Exp $
+
+  20 Sep 2014; Agostino Sarubbo <ago@gentoo.org> asterisk-11.12.1.ebuild:
+  Stable for x86, wrt bug #523216
+
+  20 Sep 2014; Agostino Sarubbo <ago@gentoo.org> asterisk-11.12.1.ebuild:
+  Stable for amd64, wrt bug #523216
+
+*asterisk-12.5.1 (19 Sep 2014)
+*asterisk-11.12.1 (19 Sep 2014)
+
+  19 Sep 2014; Tony Vroon <chainsaw@gentoo.org> -asterisk-11.11.0.ebuild,
+  -asterisk-11.12.0.ebuild, +asterisk-11.12.1.ebuild, -asterisk-12.3.2.ebuild,
+  -asterisk-12.4.0.ebuild, -asterisk-12.5.0.ebuild, +asterisk-12.5.1.ebuild:
+  Upstream fix to fully respect SpanDSP API and avoid a potential null pointer
+  dereference. On the 12 branch, additional input validation for the PubSub
+  framework in PJSIP. Remove older non-stable ebuilds.
+
+  18 Sep 2014; Tony Vroon <chainsaw@gentoo.org> asterisk-1.8.28.2.ebuild,
+  asterisk-1.8.29.0.ebuild, asterisk-11.10.2.ebuild, asterisk-11.11.0.ebuild,
+  asterisk-11.12.0.ebuild, asterisk-12.3.2.ebuild, asterisk-12.4.0.ebuild,
+  asterisk-12.5.0.ebuild:
+  Add missing build-time dependency on pkgconfig, as identified by cyberbat in
+  bug #522396.
 
 *asterisk-12.5.0 (20 Aug 2014)
 *asterisk-11.12.0 (20 Aug 2014)

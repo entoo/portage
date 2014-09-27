@@ -1,6 +1,6 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-text/convmv/convmv-1.15.ebuild,v 1.2 2013/02/10 20:22:51 scarabeus Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-text/convmv/convmv-1.15.ebuild,v 1.3 2014/09/09 09:36:02 polynomial-c Exp $
 
 EAPI=3
 
@@ -16,13 +16,15 @@ KEYWORDS="alpha amd64 hppa ia64 ~mips ppc ppc64 sparc x86"
 IUSE=""
 
 DEPEND="dev-lang/perl"
+RDEPEND="${DEPEND}"
 
 src_prepare() {
 	sed -i -e "1s|#!/usr|#!${EPREFIX}/usr|" convmv || die
 }
 
 src_install() {
-	einstall DESTDIR="${D}" PREFIX="${EPREFIX}"/usr || die "einstall failed"
+	emake DESTDIR="${D}" PREFIX="${EPREFIX}"/usr install \
+		|| die "einstall failed"
 	dodoc CREDITS Changes TODO VERSION
 }
 

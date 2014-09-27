@@ -1,10 +1,39 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/profiles/base/package.use.mask,v 1.590 2014/08/09 19:07:27 grknight Exp $
+# $Header: /var/cvsroot/gentoo-x86/profiles/base/package.use.mask,v 1.606 2014/09/19 17:30:25 ssuominen Exp $
 
 # This file requires >=portage-2.1.1
 # New entries go on top.
 #
+
+# Michał Górny <mgorny@gentoo.org> (15 Sep 2014)
+# Unsuccessful version bump of net-libs/libzrtpcpp, seems to cause
+# undefined references few layers deeper. Need further investigation,
+# if anybody cares.
+net-libs/ortp zrtp
+
+# Johannes Huber <johu@gentoo.org> (14 Sep 2014)
+# Masked until dev-libs/extra-cmake-modules is in tree.
+dev-libs/libattica qt5
+
+# Johannes Huber <johu@gentoo.org> (12 Sep 2014)
+# Masked until all dependencies are packaged.
+media-sound/tomahawk qt5
+
+# Michał Górny <mgorny@gentoo.org> (06 Sep 2014)
+# Mask the removed/deprecated flags for old ebuilds that do not use
+# the python-r1 eclass.
+sys-apps/portage python_targets_pypy2_0 python_targets_python2_6 python_targets_python3_2
+
+# Michał Górny <mgorny@gentoo.org> (06 Sep 2014)
+# (on behalf of Python team)
+# Keep 3.2 enabled to ease the migration.
+dev-lang/python-exec -python_targets_python3_2 -python_single_target_python3_2
+dev-python/python-exec -python_targets_python3_2 -python_single_target_python3_2
+
+# Rick Farina <zerochaos@gentoo.org> (26 Aug 2014)
+# mirisdr does not seem to like making releases
+<net-wireless/gr-osmosdr-9999 mirisdr
 
 # Maxim Koltsov <maksbotan@gentoo.org> (05 Aug 2014)
 # net-libs/tox is in mva overlay only ATM
@@ -31,10 +60,6 @@ sci-libs/gdal ogdi
 # Mask pixman USE flag of dev-libs/efl for future removal, bug 501074
 dev-libs/efl pixman
 
-# Andreas K. Huettel <dilfridge@gentoo.org> (29 Jun 2014)
-# Mask use-flag firebird and package dev-db/firebird for bug 460780
-net-misc/stargazer module_store_firebird
-
 # Jeroen Roovers <jer@gentoo.org> (20 Jun 2014)
 # net-libs/adns is going away (bug #513982)
 net-analyzer/wireshark libadns
@@ -49,10 +74,6 @@ www-servers/mongoose lua
 # See bugs #507808, #507810 and #507814
 sys-devel/autoconf	multislot
 sys-devel/gcc		multislot
-
-# Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org> (05 Jun 2014)
-# Needs libepoxy keywording, bug #510940
-x11-base/xorg-server glamor
 
 # Manuel Rüger <mrueg@gentoo.org> (05 Jun 2014)
 # Fails to build with net-libs/libotr-4.0.0
@@ -83,12 +104,6 @@ dev-java/jboss-logging doc
 # http://mate-desktop.org/blog/2014-03-11-mate-desktop-singing-the-bluez
 mate-base/mate bluetooth
 mate-extra/mate-user-share bluetooth
-
-# Michał Górny <mgorny@gentoo.org> (26 Apr 2014)
-# (on behalf of Python team)
-# Keep 2.6 enabled to ease the migration.
-dev-lang/python-exec -python_targets_python2_6 -python_single_target_python2_6
-dev-python/python-exec -python_targets_python2_6 -python_single_target_python2_6
 
 # Tim Harder <radhermit@gentoo.org> (26 Apr 2014)
 # Masked until qt5 is in the tree
@@ -173,8 +188,7 @@ dev-libs/boost context
 
 # Gilles Dartiguelongue <eva@gentoo.org> (25 Dec 2013)
 # gjs: tests fail and support for it was purely and simply removed in master/1.9
-# python2_6: unit tests fail for this abi, must report usptream
->=dev-libs/libpeas-1.9 gjs python_targets_python2_6
+>=dev-libs/libpeas-1.9 gjs
 
 # Gilles Dartiguelongue <eva@gentoo.org> (23 Dec 2013)
 # Gstreamer support fails to build due to libtool shortcomings when using
@@ -525,6 +539,7 @@ app-arch/libarchive e2fsprogs
 # it's masked here and unmasked in individual profiles (bug #396313).
 net-libs/webkit-gtk jit
 www-client/epiphany jit
+www-client/midori jit
 
 # Mike Frysinger <vapier@gentoo.org> (06 Dec 2011)
 # No one should be mucking with libssp unless they really know what they're
@@ -597,12 +612,6 @@ net-dns/pdnsd isdn urandom
 # Raúl Porcel <armin76@gentoo.org> (13 Feb 2011)
 # Masked until devs know how to use repoman
 <media-video/mplayer-9999 bluray
-
-# Robin H. Johnson <robbat2@gentoo.org> (28 Nov 2010)
-# bug 344885: USE=debug causes compile to fail presently.
-=dev-db/mysql-5.1.51* debug
-=dev-db/mysql-5.1.52* debug
-=dev-db/mysql-5.1.53* debug
 
 # Justin Lecher <jlec@gentoo.org> (17 Nov 2010)
 # Upstream didn't release patches for aria yet

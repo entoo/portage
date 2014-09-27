@@ -1,6 +1,6 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-mail/notmuch/notmuch-0.16-r1.ebuild,v 1.6 2014/07/21 19:06:43 dilfridge Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-mail/notmuch/notmuch-0.16-r1.ebuild,v 1.9 2014/09/18 19:47:19 aidecoe Exp $
 
 EAPI=5
 
@@ -21,8 +21,7 @@ REQUIRED_USE="
 	python? ( ${PYTHON_REQUIRED_USE} )
 	test? ( crypt emacs python )
 	"
-IUSE="bash-completion crypt debug doc emacs mutt nmbug pick python test
-	zsh-completion"
+IUSE="crypt debug doc emacs mutt nmbug pick python test"
 
 CDEPEND="
 	>=dev-libs/glib-2.22
@@ -38,7 +37,7 @@ DEPEND="${CDEPEND}
 	virtual/pkgconfig
 	doc? ( python? ( dev-python/sphinx[${PYTHON_USEDEP}] ) )
 	test? ( app-misc/dtach || ( >=app-editors/emacs-23[libxml2]
-		>=app-editors/emacs-vcs-23[libxml2] ) sys-devel/gdb )
+		>=app-editors/emacs-vcs-23[libxml2] ) <sys-devel/gdb-7.8 )
 	"
 RDEPEND="${CDEPEND}
 	crypt? ( app-crypt/gnupg )
@@ -48,7 +47,6 @@ RDEPEND="${CDEPEND}
 		virtual/perl-Digest-SHA virtual/perl-File-Path virtual/perl-Getopt-Long
 		virtual/perl-Pod-Parser
 		)
-	zsh-completion? ( app-shells/zsh )
 	"
 
 DOCS=( AUTHORS NEWS README )
@@ -87,14 +85,12 @@ src_prepare() {
 
 src_configure() {
 	local myeconfargs=(
-		--bashcompletiondir="${ROOT}/usr/share/bash-completion"
-		--emacslispdir="${ROOT}/${SITELISP}/${PN}"
-		--emacsetcdir="${ROOT}/${SITEETC}/${PN}"
+		--bashcompletiondir="${EPREFIX}/usr/share/bash-completion"
+		--emacslispdir="${EPREFIX}/${SITELISP}/${PN}"
+		--emacsetcdir="${EPREFIX}/${SITEETC}/${PN}"
 		--with-gmime-version=2.6
-		--zshcompletiondir="${ROOT}/usr/share/zsh/site-functions"
-		$(use_with bash-completion)
+		--zshcompletiondir="${EPREFIX}/usr/share/zsh/site-functions"
 		$(use_with emacs)
-		$(use_with zsh-completion)
 	)
 	econf "${myeconfargs[@]}"
 }

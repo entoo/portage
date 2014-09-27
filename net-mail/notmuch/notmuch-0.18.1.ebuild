@@ -1,6 +1,6 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-mail/notmuch/notmuch-0.18.1.ebuild,v 1.3 2014/07/21 19:06:43 dilfridge Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-mail/notmuch/notmuch-0.18.1.ebuild,v 1.8 2014/09/18 19:47:19 aidecoe Exp $
 
 EAPI=5
 
@@ -20,10 +20,10 @@ REQUIRED_USE="
 	python? ( ${PYTHON_REQUIRED_USE} )
 	test? ( crypt emacs python )
 	"
-IUSE="bash-completion crypt debug doc emacs mutt nmbug python test
-	zsh-completion"
+IUSE="crypt debug doc emacs mutt nmbug python test"
 
 CDEPEND="
+	>=app-shells/bash-completion-1.9
 	>=dev-libs/glib-2.22
 	>=dev-libs/gmime-2.6.7
 	!=dev-libs/gmime-2.6.19
@@ -39,10 +39,9 @@ DEPEND="${CDEPEND}
 	virtual/pkgconfig
 	doc? ( python? ( dev-python/sphinx[${PYTHON_USEDEP}] ) )
 	test? ( app-misc/dtach || ( >=app-editors/emacs-23[libxml2]
-		>=app-editors/emacs-vcs-23[libxml2] ) sys-devel/gdb )
+		>=app-editors/emacs-vcs-23[libxml2] ) <sys-devel/gdb-7.8 )
 	"
 RDEPEND="${CDEPEND}
-	bash-completion? ( >=app-shells/bash-completion-1.9 )
 	crypt? ( app-crypt/gnupg )
 	nmbug? ( dev-vcs/git virtual/perl-File-Temp virtual/perl-Pod-Parser )
 	mutt? ( dev-perl/File-Which dev-perl/Mail-Box dev-perl/MailTools
@@ -50,7 +49,6 @@ RDEPEND="${CDEPEND}
 		virtual/perl-Digest-SHA virtual/perl-File-Path virtual/perl-Getopt-Long
 		virtual/perl-Pod-Parser
 		)
-	zsh-completion? ( app-shells/zsh )
 	"
 
 DOCS=( AUTHORS NEWS README )
@@ -90,7 +88,6 @@ pkg_setup() {
 src_prepare() {
 	[[ "${MY_PATCHES[@]}" ]] && epatch "${MY_PATCHES[@]}"
 
-	default
 	bindings python distutils-r1_src_prepare
 	bindings python mv README README-python || die
 	mv contrib/notmuch-mutt/README contrib/notmuch-mutt/README-mutt || die
@@ -98,14 +95,12 @@ src_prepare() {
 
 src_configure() {
 	local myeconfargs=(
-		--bashcompletiondir="${ROOT}/usr/share/bash-completion"
-		--emacslispdir="${ROOT}/${SITELISP}/${PN}"
-		--emacsetcdir="${ROOT}/${SITEETC}/${PN}"
+		--bashcompletiondir="${EPREFIX}/usr/share/bash-completion"
+		--emacslispdir="${EPREFIX}/${SITELISP}/${PN}"
+		--emacsetcdir="${EPREFIX}/${SITEETC}/${PN}"
 		--with-gmime-version=2.6
-		--zshcompletiondir="${ROOT}/usr/share/zsh/site-functions"
-		$(use_with bash-completion)
+		--zshcompletiondir="${EPREFIX}/usr/share/zsh/site-functions"
 		$(use_with emacs)
-		$(use_with zsh-completion)
 	)
 	tc-export CC CXX
 	econf "${myeconfargs[@]}"
@@ -152,7 +147,6 @@ src_install() {
 	fi
 
 	if use mutt; then
-		[[ -e /etc/mutt/notmuch-mutt.rc ]] && NOTMUCH_MUTT_RC_EXISTS=1
 		pushd contrib/notmuch-mutt || die
 		dobin notmuch-mutt
 		doman notmuch-mutt.1
@@ -166,15 +160,17 @@ src_install() {
 	use doc && bindings python dohtml -r python
 }
 
-pkg_postinst() {
-	use emacs && elisp-site-regen
-
-	if use mutt && [[ ! ${NOTMUCH_MUTT_RC_EXISTS} ]]; then
+pkg_preinst() {
+	if use mutt && ! [[ -e ${ROOT}/etc/mutt/notmuch-mutt.rc ]]; then
 		elog "To enable notmuch support in mutt, add the following line into"
 		elog "your mutt config file, please:"
 		elog ""
 		elog "  source /etc/mutt/notmuch-mutt.rc"
 	fi
+}
+
+pkg_postinst() {
+	use emacs && elisp-site-regen
 }
 
 pkg_postrm() {

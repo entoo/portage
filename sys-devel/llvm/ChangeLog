@@ -1,6 +1,26 @@
 # ChangeLog for sys-devel/llvm
 # Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-devel/llvm/ChangeLog,v 1.203 2014/07/14 14:53:52 axs Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-devel/llvm/ChangeLog,v 1.207 2014/09/18 20:06:55 mgorny Exp $
+
+  18 Sep 2014; Michał Górny <mgorny@gentoo.org>
+  files/clang-3.5-gentoo-runtime-gcc-detection-v3.patch:
+  Use simpler llvm::sys::fs::exists() form in gcc version detection code since
+  the other one is deprecated. Bug #523082.
+
+  17 Sep 2014; Bernard Cafarelli <voyageur@gentoo.org> llvm-3.4.2.ebuild:
+  Also disable troublesome test in 3.4.2, fixes bug #516496
+
+  16 Sep 2014; Bernard Cafarelli <voyageur@gentoo.org> llvm-3.5.0.ebuild,
+  +files/llvm-3.5.0-fix_LLVMExports_cmake.patch:
+  Backport upstream fix for cmake files, thanks David Hallas <david@cgp.dk> in
+  bug #522510
+
+*llvm-3.5.0 (07 Sep 2014)
+
+  07 Sep 2014; Michał Górny <mgorny@gentoo.org>
+  +files/clang-3.5-gentoo-runtime-gcc-detection-v3.patch,
+  +files/llvm-3.5-gcc-4.9.patch, +llvm-3.5.0.ebuild, llvm-9999.ebuild:
+  Version bump, bug #522188.
 
   14 Jul 2014; Ian Stakenvicius (_AxS_) <axs@gentoo.org> llvm-3.3-r3.ebuild,
   llvm-3.4.1-r2.ebuild, llvm-3.4.2.ebuild, llvm-9999.ebuild:

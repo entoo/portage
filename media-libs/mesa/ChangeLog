@@ -1,6 +1,30 @@
 # ChangeLog for media-libs/mesa
 # Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-libs/mesa/ChangeLog,v 1.571 2014/08/19 22:49:14 mattst88 Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-libs/mesa/ChangeLog,v 1.576 2014/09/22 21:02:19 mattst88 Exp $
+
+  22 Sep 2014; Matt Turner <mattst88@gentoo.org> mesa-10.3.0.ebuild:
+  Fix SRC_URI.
+
+*mesa-10.3.0 (22 Sep 2014)
+
+  22 Sep 2014; Matt Turner <mattst88@gentoo.org> +mesa-10.3.0.ebuild:
+  Version bump to 10.3.0, bug 523382.
+
+*mesa-10.2.8 (22 Sep 2014)
+
+  22 Sep 2014; Matt Turner <mattst88@gentoo.org> +mesa-10.2.8.ebuild:
+  Version bump to 10.2.8
+
+  16 Sep 2014; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  mesa-10.2.7.ebuild:
+  Enable gbm by default so we can enable glamor by default in xorg-server
+
+*mesa-10.2.7 (07 Sep 2014)
+
+  07 Sep 2014; Michał Górny <mgorny@gentoo.org>
+  +files/mesa-10.2.7-llvm-unique_ptr.patch, +mesa-10.2.7.ebuild:
+  Version bump, requested in bug #522306. Update dependencies from ::x11. Fix
+  llvm-3.5.0 support, bug #522300.
 
 *mesa-10.2.6 (19 Aug 2014)
 

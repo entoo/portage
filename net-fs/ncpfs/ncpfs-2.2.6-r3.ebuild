@@ -1,9 +1,8 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-fs/ncpfs/ncpfs-2.2.6-r3.ebuild,v 1.2 2014/08/13 07:01:46 kumba Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-fs/ncpfs/ncpfs-2.2.6-r3.ebuild,v 1.4 2014/09/09 18:54:36 nimiux Exp $
 
-EAPI="5"
-
+EAPI=5
 inherit eutils pam
 
 DESCRIPTION="Provides Access to Netware services using the NCP protocol"
@@ -12,7 +11,7 @@ SRC_URI="ftp://platan.vc.cvut.cz/pub/linux/${PN}/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~mips ~ppc ~ppc64 ~x86"
+KEYWORDS="amd64 ~mips ~ppc ~ppc64 ~x86"
 IUSE="nls pam php"
 
 DEPEND="nls? ( sys-devel/gettext )
@@ -60,6 +59,9 @@ src_prepare() {
 	# Bug 446696.  This might need re-diffing if additional Makefile
 	# fixes are added.
 	epatch "${FILESDIR}"/${P}-makefile-fix-soname-link.patch
+
+	# bug 522444
+	epatch "${FILESDIR}"/${P}-zend_function_entry.patch
 }
 
 src_configure() {

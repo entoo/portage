@@ -1,6 +1,6 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/games-action/phobiaii/phobiaii-1.1.ebuild,v 1.17 2014/05/03 07:57:19 ulm Exp $
+# $Header: /var/cvsroot/gentoo-x86/games-action/phobiaii/phobiaii-1.1.ebuild,v 1.19 2014/09/07 17:38:32 ulm Exp $
 
 inherit eutils games
 
@@ -11,13 +11,12 @@ SRC_URI="http://www.lynxlabs.com/games/linuxphobia/${MY_P}-i386.tar.bz2"
 
 LICENSE="freedist"		#505612
 SLOT="0"
-KEYWORDS="amd64 x86"
+KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 RDEPEND="media-libs/sdl-mixer
 	media-libs/libsdl
-	x86? ( sys-libs/lib-compat )
-	amd64? ( app-emulation/emul-linux-x86-compat )"
+	sys-libs/lib-compat"
 
 S=${WORKDIR}/${MY_P}
 

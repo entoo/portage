@@ -1,6 +1,6 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-libs/libfm/libfm-9999.ebuild,v 1.40 2014/03/16 10:32:42 hwoarang Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-libs/libfm/libfm-9999.ebuild,v 1.41 2014/09/06 08:41:06 hwoarang Exp $
 
 EAPI=5
 
@@ -13,8 +13,8 @@ DESCRIPTION="A library for file management"
 HOMEPAGE="http://pcmanfm.sourceforge.net/"
 
 LICENSE="GPL-2"
-SLOT="0/4.0.0" #copy ABI_VERSION because it seems upstream change it randomly
-IUSE="+automount debug doc examples udisks vala"
+SLOT="0/4.2.0" #copy ABI_VERSION because it seems upstream change it randomly
+IUSE="+automount debug doc examples exif udisks vala"
 KEYWORDS=""
 
 COMMON_DEPEND=">=dev-libs/glib-2.18:2
@@ -29,7 +29,8 @@ RDEPEND="${COMMON_DEPEND}
 			gnome-base/gvfs[udev,gdu]
 		) )
 		!udisks? ( gnome-base/gvfs[udev] )
-	)"
+	)
+	exif? ( media-libs/libexif )"
 DEPEND="${COMMON_DEPEND}
 	vala? ( $(vala_depend) )
 	doc? (
@@ -85,6 +86,7 @@ src_configure() {
 		--disable-dependency-tracking \
 		--disable-static \
 		$(use_enable examples demo) \
+		$(use_enable exif) \
 		$(use_enable debug) \
 		$(use_enable udisks) \
 		$(use_enable vala actions) \

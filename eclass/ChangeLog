@@ -1,6 +1,80 @@
 # ChangeLog for eclass directory
 # Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/eclass/ChangeLog,v 1.1354 2014/08/18 08:56:06 mgorny Exp $
+# $Header: /var/cvsroot/gentoo-x86/eclass/ChangeLog,v 1.1376 2014/09/26 17:56:29 grknight Exp $
+
+  26 Sep 2014; Brian Evans <grknight@gentoo.org> mysql-multilib.eclass:
+  Fix up invalid general IUSE with underscores
+
+  26 Sep 2014; Brian Evans <grknight@gentoo.org> mysql-multilib.eclass:
+  Adjust deps for >=mariadb-10.0.14 and add USE base deps for mariadb-galera
+
+  22 Sep 2014; Davide Pesavento <pesa@gentoo.org> qt4-build.eclass,
+  qt5-build.eclass:
+  Fix SRC_URI (bug 523408) and update HOMEPAGE.
+
+  19 Sep 2014; Andreas K. Huettel <dilfridge@gentoo.org> perl-module.eclass:
+  Remove support for EAPI 1, 2, 3 in perl-module.eclass (no packages left in
+  the tree)
+
+  17 Sep 2014; Justin Lecher <jlec@gentoo.org> cuda.eclass:
+  nvcc always needs tp know the compiler location
+
+  16 Sep 2014; Johannes Huber <johu@gentoo.org> kde4-base.eclass:
+  Add kde-workspace 4.11.12 SRC_URI, remove obsolete.
+
+  16 Sep 2014; Davide Pesavento <pesa@gentoo.org> qt5-build.eclass:
+  Exclude installed_cmake tests as well.
+
+  15 Sep 2014; Justin Lecher <jlec@gentoo.org> intel-sdp.eclass:
+  Allow RPMS specified as array
+
+  11 Sep 2014; Ian Stakenvicius (_AxS_) <axs@gentoo.org>
+  +mozconfig-v4.31.eclass, -mozconfig-v4.eclass:
+  dropped unused mozconfig-v4 and added new mozconfig-v4.31 eclasses
+
+  11 Sep 2014; Davide Pesavento <pesa@gentoo.org> qt5-build.eclass:
+  Restrict tests on 5.3.x (except live).
+
+  04 Sep 2014; Michał Górny <mgorny@gentoo.org> python-utils-r1.eclass,
+  tests/python-utils-r1.sh:
+  Preserve all whitespace in shebangs, and add regression test for that. Also,
+  prevent filename expansion when word-splitting it. Bug #522080.
+
+  04 Sep 2014; Michał Górny <mgorny@gentoo.org> tests/python-utils-r1.sh:
+  Fix tests for python_is_python3.
+
+  03 Sep 2014; Ian Stakenvicius (_AxS_) <axs@gentoo.org>
+  +mozconfig-v4.1.eclass:
+  committed new eclass to support mozilla ebuilds
+
+  03 Sep 2014; Brian Evans <grknight@gentoo.org> mysql-multilib.eclass:
+  Fix libedit MULTILIB_USEDEP wrt bug 521964
+
+  02 Sep 2014; Michał Górny <mgorny@gentoo.org> bash-completion-r1.eclass:
+  Add bashcomp_alias function to create command aliases for completion.
+
+  30 Aug 2014; Anthony G. Basile <blueness@gentoo.org> pax-utils.eclass:
+  Update pax-utils.eclass according to bug #520198
+
+  30 Aug 2014; Davide Pesavento <pesa@gentoo.org> +qt5-build.eclass:
+  Initial commit of qt5-build.eclass
+
+  30 Aug 2014; Brian Evans <grknight@gentoo.org> mysql-multilib.eclass:
+  Fix percona-server SRC_URI, add missing dep on mariadb-galera for rsync sst,
+  Add future deps for packages.
+
+  28 Aug 2014; Sven Vermeulen <swift@gentoo.org> selinux-policy-2.eclass:
+  Simplify rlpkg call and optimize package relabeling thanks to Jason Perfinion
+
+  27 Aug 2014; Michał Górny <mgorny@gentoo.org> bash-completion-r1.eclass:
+  Make completionsdir default to the new location (for new installs). Eselect
+  support is provided in app-shells/bash-completion-2.1-r1.
+
+  24 Aug 2014; Michał Górny <mgorny@gentoo.org> distutils-r1.eclass:
+  Pass install paths to distutils via setup.cfg.
+
+  23 Aug 2014; Sven Vermeulen <swift@gentoo.org> selinux-policy-2.eclass:
+  Adding relabeling support for SELinux depending packages
 
   18 Aug 2014; Michał Górny <mgorny@gentoo.org> python-r1.eclass:
   Add extra quoting to prevent accidental globbing.

@@ -1,6 +1,21 @@
 # ChangeLog for sys-apps/paludis
 # Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/paludis/ChangeLog,v 1.243 2014/06/27 07:02:25 mgorny Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/paludis/ChangeLog,v 1.247 2014/08/30 03:53:57 jdhore Exp $
+
+  30 Aug 2014; Jeff Horelick <jdhore@gentoo.org> paludis-2.0.0.ebuild:
+  Mark amd64 wrt bug #520874
+
+  29 Aug 2014; Jeff Horelick <jdhore@gentoo.org> paludis-2.0.0.ebuild:
+  Depend on GCC 4.7 because that's actually what's required.
+
+  28 Aug 2014; Jeff Horelick <jdhore@gentoo.org>
+  +files/paludis-2.0.0-fix-format-security.patch, paludis-2.0.0.ebuild:
+  Fix building with -Werror=format-security. Fixes bug #521326  Patch from
+  upstream: http://git.exherbo.org/paludis/paludis.git/commit/?id=f777dadef60143
+  4550aa3fb411eebab04ad07103
+
+  26 Aug 2014; Jeff Horelick <jdhore@gentoo.org> paludis-2.0.0.ebuild:
+  marked x86 wrt bug #520874
 
   27 Jun 2014; Michał Górny <mgorny@gentoo.org> paludis-2.0.0.ebuild:
   Remove obsolete --enable-prebuilt-documentation. Upstream requires you to

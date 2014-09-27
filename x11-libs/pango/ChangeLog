@@ -1,6 +1,26 @@
 # ChangeLog for x11-libs/pango
 # Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/x11-libs/pango/ChangeLog,v 1.415 2014/08/21 10:46:48 ago Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-libs/pango/ChangeLog,v 1.419 2014/09/15 08:24:50 ago Exp $
+
+  15 Sep 2014; Agostino Sarubbo <ago@gentoo.org> pango-1.36.5.ebuild:
+  Stable for sparc, wrt bug #512012
+
+*pango-1.36.7 (04 Sep 2014)
+
+  04 Sep 2014; Pacho Ramos <pacho@gentoo.org> +pango-1.36.7.ebuild,
+  -files/pango-1.26.0-lib64.patch, -files/pango-1.30.1-AM_CONFIG_HEADER.patch,
+  -files/pango-1.30.1-config_get_key_system-declaration.patch,
+  -files/pango-1.30.1-coretext-hash.patch,
+  -files/pango-1.32.5-AM_CONFIG_HEADER.patch, -pango-1.36.3-r2.ebuild:
+  Version bump, stop installing manually the cache file under /etc using
+  upstream way of generating the file in proper place under /usr/lib that
+  handles all multilib magic by itself. Drop old.
+
+  25 Aug 2014; Agostino Sarubbo <ago@gentoo.org> pango-1.36.5.ebuild:
+  Stable for alpha, wrt bug #512012
+
+  23 Aug 2014; Agostino Sarubbo <ago@gentoo.org> pango-1.36.5.ebuild:
+  Stable for ia64, wrt bug #512012
 
   21 Aug 2014; Agostino Sarubbo <ago@gentoo.org> pango-1.36.5.ebuild:
   Stable for ppc64, wrt bug #512012

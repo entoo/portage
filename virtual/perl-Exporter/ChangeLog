@@ -1,6 +1,43 @@
 # ChangeLog for virtual/perl-Exporter
 # Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/virtual/perl-Exporter/ChangeLog,v 1.8 2014/07/28 16:27:59 zlogene Exp $
+# $Header: /var/cvsroot/gentoo-x86/virtual/perl-Exporter/ChangeLog,v 1.17 2014/09/23 09:57:06 ago Exp $
+
+  23 Sep 2014; Agostino Sarubbo <ago@gentoo.org>
+  perl-Exporter-5.680.0-r2.ebuild:
+  Stable for sparc, wrt bug #504786
+
+  22 Sep 2014; Agostino Sarubbo <ago@gentoo.org>
+  perl-Exporter-5.680.0-r2.ebuild:
+  Stable for x86, wrt bug #504786
+
+  22 Sep 2014; Agostino Sarubbo <ago@gentoo.org>
+  perl-Exporter-5.680.0-r2.ebuild:
+  Stable for ia64, wrt bug #504786
+
+  21 Sep 2014; Agostino Sarubbo <ago@gentoo.org>
+  perl-Exporter-5.680.0-r2.ebuild:
+  Stable for ppc, wrt bug #504786
+
+  21 Sep 2014; Agostino Sarubbo <ago@gentoo.org>
+  perl-Exporter-5.680.0-r2.ebuild:
+  Stable for ppc64, wrt bug #504786
+
+  17 Sep 2014; Jeroen Roovers <jer@gentoo.org> perl-Exporter-5.680.0-r2.ebuild:
+  Stable for HPPA (bug #504786).
+
+*perl-Exporter-5.710.0 (16 Sep 2014)
+
+  16 Sep 2014; Andreas K. Huettel <dilfridge@gentoo.org>
+  +perl-Exporter-5.710.0.ebuild:
+  Add Perl 5.20.1 version
+
+  13 Sep 2014; Andreas K. Huettel <dilfridge@gentoo.org>
+  perl-Exporter-5.700.0.ebuild:
+  Fix dependencies, bug 520954
+
+  31 Aug 2014; Mikle Kolyada <zlogene@gentoo.org>
+  perl-Exporter-5.680.0-r2.ebuild:
+  arm stable wrt bug #504786
 
   28 Jul 2014; Mikle Kolyada <zlogene@gentoo.org>
   perl-Exporter-5.680.0-r2.ebuild:

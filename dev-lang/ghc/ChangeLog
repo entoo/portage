@@ -1,6 +1,28 @@
 # ChangeLog for dev-lang/ghc
 # Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-lang/ghc/ChangeLog,v 1.264 2014/08/11 10:18:57 slyfox Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-lang/ghc/ChangeLog,v 1.269 2014/09/07 06:29:23 slyfox Exp $
+
+  07 Sep 2014; Sergei Trofimovich <slyfox@gentoo.org> ghc-6.12.3-r2.ebuild,
+  ghc-7.0.4.ebuild:
+  Disable bitrot bfd code (bug #522268 by Sebastian Pipping).
+
+  05 Sep 2014; Sergei Trofimovich <slyfox@gentoo.org> ghc-7.8.3.ebuild:
+  Allow USE=gmp on ia64 (fixed by ghc-7.8.3-ia64-prim.patch).
+
+  04 Sep 2014; Sergei Trofimovich <slyfox@gentoo.org>
+  +files/ghc-7.8.3-cc-lang.patch, +files/ghc-7.8.3-deRefStablePtr.patch,
+  +files/ghc-7.8.3-ia64-prim.patch, +files/ghc-7.8.3-linker-warn.patch,
+  +files/ghc-7.8.3-pic-asm.patch, +files/ghc-7.8.3-pic-sparc.patch,
+  -files/ghc-7.8.2-ia64-no-shared.patch, files/ghc-7.8.3-prim-lm.patch,
+  ghc-7.8.3.ebuild:
+  A bunch of UNREG backports (fixes sparc dynamic libraries, ia64 gmp support).
+
+  23 Aug 2014; Sergei Trofimovich <slyfox@gentoo.org> metadata.xml:
+  Drop redundant maintainer in favour of herd.
+
+  23 Aug 2014; Sergei Trofimovich <slyfox@gentoo.org>
+  +files/ghc-7.8.3-unreg-lit.patch, ghc-7.8.3.ebuild:
+  Fix integer-gmp crashes and miscomputations in UNREG builds.
 
   11 Aug 2014; Sergei Trofimovich <slyfox@gentoo.org> ghc-7.8.3.ebuild:
   Keyword amd64/x86 where we have bianries.

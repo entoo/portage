@@ -1,6 +1,51 @@
 # ChangeLog for sys-kernel/vanilla-sources
 # Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-kernel/vanilla-sources/ChangeLog,v 1.1312 2014/08/14 23:08:23 mpagano Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-kernel/vanilla-sources/ChangeLog,v 1.1318 2014/09/26 09:57:16 ago Exp $
+
+*vanilla-sources-3.4.104 (26 Sep 2014)
+
+  26 Sep 2014; Agostino Sarubbo <ago@gentoo.org>
+  +vanilla-sources-3.4.104.ebuild, -vanilla-sources-3.4.103.ebuild:
+  Automated version bump to 3.4.104 - remove old.
+
+*vanilla-sources-3.10.55 (18 Sep 2014)
+*vanilla-sources-3.14.19 (18 Sep 2014)
+*vanilla-sources-3.16.3 (18 Sep 2014)
+
+  18 Sep 2014; Agostino Sarubbo <ago@gentoo.org>
+  +vanilla-sources-3.10.55.ebuild, +vanilla-sources-3.14.19.ebuild,
+  +vanilla-sources-3.16.3.ebuild, -vanilla-sources-3.10.54.ebuild,
+  -vanilla-sources-3.14.18.ebuild, -vanilla-sources-3.16.2.ebuild:
+  Automated version bump to {3.10.55,3.14.19,3.16.3} - remove old.
+
+*vanilla-sources-3.2.63 (14 Sep 2014)
+
+  14 Sep 2014; Agostino Sarubbo <ago@gentoo.org> +vanilla-sources-3.2.63.ebuild,
+  -vanilla-sources-3.2.62.ebuild:
+  Automated version bump to 3.2.63 - remove old.
+
+*vanilla-sources-3.12.28 (07 Sep 2014)
+
+  07 Sep 2014; Agostino Sarubbo <ago@gentoo.org>
+  +vanilla-sources-3.12.28.ebuild, -vanilla-sources-3.12.27.ebuild,
+  -vanilla-sources-3.15.10.ebuild:
+  Automated version bump to 3.12.28 - remove old.
+
+*vanilla-sources-3.14.18 (06 Sep 2014)
+*vanilla-sources-3.10.54 (06 Sep 2014)
+*vanilla-sources-3.16.2 (06 Sep 2014)
+
+  06 Sep 2014; Agostino Sarubbo <ago@gentoo.org>
+  +vanilla-sources-3.10.54.ebuild, +vanilla-sources-3.14.18.ebuild,
+  +vanilla-sources-3.16.2.ebuild, -vanilla-sources-3.10.53.ebuild,
+  -vanilla-sources-3.14.17.ebuild, -vanilla-sources-3.16.1.ebuild:
+  Automated version bump to {3.10.54,3.14.18,3.16.2} - remove old.
+
+*vanilla-sources-3.12.27 (28 Aug 2014)
+
+  28 Aug 2014; Agostino Sarubbo <ago@gentoo.org>
+  +vanilla-sources-3.12.27.ebuild, -vanilla-sources-3.12.26.ebuild:
+  Automated version bump to 3.12.27 - remove old.
 
 *vanilla-sources-3.16.1 (14 Aug 2014)
 *vanilla-sources-3.15.10 (14 Aug 2014)

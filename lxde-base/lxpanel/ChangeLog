@@ -1,6 +1,20 @@
 # ChangeLog for lxde-base/lxpanel
-# Copyright 1999-2013 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/lxde-base/lxpanel/ChangeLog,v 1.60 2013/09/18 19:09:38 hwoarang Exp $
+# Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/lxde-base/lxpanel/ChangeLog,v 1.62 2014/09/10 01:54:45 nullishzero Exp $
+
+*lxpanel-0.7.0-r1 (10 Sep 2014)
+
+  10 Sep 2014; Pavel Kazakov <nullishzero@gentoo.org>
+  +files/lxpanel-0.7.0-right-click-fix.patch, +lxpanel-0.7.0-r1.ebuild:
+  Patch for fixing left-click issue, thanks to Jonathan Thibault for bug report
+  (Bug #522404). Also looks as if >=x11-libs/libfm-1.2.0 is a hard dependency
+  now.
+
+*lxpanel-0.7.0 (06 Sep 2014)
+
+  06 Sep 2014; Markos Chandras <hwoarang@gentoo.org> +lxpanel-0.7.0.ebuild:
+  Version bump. Bug #518134. x11-libs/libwnck does not seem to be optional
+  anymore
 
 *lxpanel-0.6.1 (18 Sep 2013)
 

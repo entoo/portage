@@ -1,6 +1,24 @@
 # ChangeLog for app-portage/mirrorselect
 # Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-portage/mirrorselect/ChangeLog,v 1.143 2014/08/18 07:01:59 blueness Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-portage/mirrorselect/ChangeLog,v 1.149 2014/09/24 09:33:24 ago Exp $
+
+  24 Sep 2014; Agostino Sarubbo <ago@gentoo.org> mirrorselect-2.2.2.ebuild:
+  Stable for x86, wrt bug #513278
+
+  24 Sep 2014; Agostino Sarubbo <ago@gentoo.org> mirrorselect-2.2.2.ebuild:
+  Stable for ppc64, wrt bug #513278
+
+  24 Sep 2014; Agostino Sarubbo <ago@gentoo.org> mirrorselect-2.2.2.ebuild:
+  Stable for ppc, wrt bug #513278
+
+  28 Aug 2014; Joshua Kinard <kumba@gentoo.org> mirrorselect-2.2.2.ebuild:
+  Added ~mips to KEYWORDS, per #509628.
+
+  28 Aug 2014; Naohiro Aota <naota@gentoo.org> mirrorselect-2.2.2.ebuild:
+  Add ~x86-fbsd. #509628
+
+  25 Aug 2014; Manuel Rüger <mrueg@gentoo.org> mirrorselect-2.2.2.ebuild:
+  Mark amd64 stable. Bug #513278.
 
   18 Aug 2014; Anthony G. Basile <blueness@gentoo.org>
   mirrorselect-2.2.2.ebuild, mirrorselect-9999.ebuild:

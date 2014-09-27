@@ -1,6 +1,44 @@
 # ChangeLog for media-video/ffmpeg
 # Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-video/ffmpeg/ChangeLog,v 1.781 2014/08/21 10:45:06 ago Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-video/ffmpeg/ChangeLog,v 1.791 2014/09/15 08:23:19 ago Exp $
+
+  15 Sep 2014; Agostino Sarubbo <ago@gentoo.org> ffmpeg-1.2.6-r1.ebuild:
+  Stable for sparc, wrt bug #512012
+
+  29 Aug 2014; Alexis Ballier <aballier@gentoo.org> ffmpeg-2.2.7.ebuild,
+  ffmpeg-2.3.3.ebuild, ffmpeg-9999.ebuild:
+  fix automagic on libXv, bug #520086
+
+  29 Aug 2014; Alexis Ballier <aballier@gentoo.org> -ffmpeg-0.10.14.ebuild,
+  -ffmpeg-2.2.5.ebuild, -ffmpeg-2.3.ebuild, -ffmpeg-2.3.1.ebuild,
+  -ffmpeg-2.3.2.ebuild:
+  remove old
+
+  29 Aug 2014; Alexis Ballier <aballier@gentoo.org> ffmpeg-9999.ebuild:
+  update subslot per upstream git master, bug #521502 by gerion
+
+  29 Aug 2014; Alexis Ballier <aballier@gentoo.org> ffmpeg-9999.ebuild:
+  add lzma useflag
+
+*ffmpeg-2.3.3 (29 Aug 2014)
+
+  29 Aug 2014; Alexis Ballier <aballier@gentoo.org> +ffmpeg-2.3.3.ebuild:
+  version bump
+
+  29 Aug 2014; Alexis Ballier <aballier@gentoo.org> ffmpeg-2.3.2.ebuild,
+  ffmpeg-9999.ebuild:
+  fix dependency.unknwon warning on latest versions
+
+*ffmpeg-1.2.8 (29 Aug 2014)
+
+  29 Aug 2014; Alexis Ballier <aballier@gentoo.org> +ffmpeg-1.2.8.ebuild:
+  bump for 1.2 branch
+
+  25 Aug 2014; Agostino Sarubbo <ago@gentoo.org> ffmpeg-1.2.6-r1.ebuild:
+  Stable for alpha, wrt bug #512012
+
+  23 Aug 2014; Agostino Sarubbo <ago@gentoo.org> ffmpeg-1.2.6-r1.ebuild:
+  Stable for ia64, wrt bug #512012
 
   21 Aug 2014; Agostino Sarubbo <ago@gentoo.org> ffmpeg-1.2.6-r1.ebuild:
   Stable for ppc64, wrt bug #512012

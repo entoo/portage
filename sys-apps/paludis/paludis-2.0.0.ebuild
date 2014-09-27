@@ -1,6 +1,6 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/paludis/paludis-2.0.0.ebuild,v 1.2 2014/06/27 07:02:25 mgorny Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/paludis/paludis-2.0.0.ebuild,v 1.6 2014/08/30 03:53:57 jdhore Exp $
 
 EAPI=4
 
@@ -15,7 +15,7 @@ SRC_URI="http://paludis.exherbo.org/download/${P}.tar.bz2"
 IUSE="doc pbins pink python ruby search-index test xml"
 LICENSE="GPL-2 vim"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~arm ~ia64 ~mips ~ppc ~ppc64 ~s390 ~sparc ~x86"
+KEYWORDS="~alpha amd64 ~arm ~ia64 ~mips ~ppc ~ppc64 ~s390 ~sparc x86"
 
 COMMON_DEPEND="
 	>=app-admin/eselect-1.2.13
@@ -34,7 +34,7 @@ DEPEND="${COMMON_DEPEND}
 	>=app-text/asciidoc-8.6.3
 	app-text/htmltidy
 	app-text/xmlto
-	>=sys-devel/gcc-4.4
+	>=sys-devel/gcc-4.7
 	doc? (
 		|| (
 			>=app-doc/doxygen-1.5.3
@@ -67,11 +67,11 @@ pkg_pretend() {
 
 	if [[ ${MERGE_TYPE} != binary ]]; then
 		if [[ $(gcc-major-version) -lt 4
-			|| ( $(gcc-major-version) -eq 4 && $(gcc-minor-version) -lt 4 ) ]]
+			|| ( $(gcc-major-version) -eq 4 && $(gcc-minor-version) -lt 7 ) ]]
 		then
-			eerror "Paludis requires at least gcc 4.4 to build. Please switch the active"
+			eerror "Paludis requires at least gcc 4.7 to build. Please switch the active"
 			eerror "gcc version using gcc-config."
-			die "Paludis requires at least gcc 4.4"
+			die "Paludis requires at least gcc 4.7"
 		fi
 	fi
 }
@@ -87,6 +87,7 @@ src_prepare() {
 	# The package explicitly wants ruby1.9, so fix the script on it.
 	# https://bugs.gentoo.org/show_bug.cgi?id=439372#c2
 	sed -i -e '1s/ruby/&19/' ruby/demos/*.rb || die
+	epatch "${FILESDIR}/${P}-fix-format-security.patch"
 
 	epatch_user
 }

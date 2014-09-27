@@ -1,10 +1,10 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-devel/llvm/llvm-9999.ebuild,v 1.89 2014/07/14 14:53:52 axs Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-devel/llvm/llvm-9999.ebuild,v 1.90 2014/09/07 11:12:00 mgorny Exp $
 
 EAPI=5
 
-PYTHON_COMPAT=( python{2_6,2_7} pypy pypy2_0 )
+PYTHON_COMPAT=( python2_7 pypy )
 
 inherit eutils flag-o-matic git-r3 multibuild multilib \
 	multilib-minimal python-r1 toolchain-funcs pax-utils check-reqs
@@ -18,8 +18,9 @@ EGIT_REPO_URI="http://llvm.org/git/llvm.git
 LICENSE="UoI-NCSA"
 SLOT="0/${PV}"
 KEYWORDS=""
-IUSE="clang debug doc gold +libffi multitarget ncurses ocaml python
-	+static-analyzer test udis86 xml video_cards_radeon kernel_Darwin"
+IUSE="clang debug doc gold libedit +libffi multitarget ncurses ocaml python
+	+static-analyzer test xml video_cards_radeon
+	kernel_Darwin"
 
 COMMON_DEPEND="
 	sys-libs/zlib:0=
@@ -32,10 +33,10 @@ COMMON_DEPEND="
 		xml? ( dev-libs/libxml2:2= )
 	)
 	gold? ( >=sys-devel/binutils-2.22:*[cxx] )
+	libedit? ( dev-libs/libedit:0=[${MULTILIB_USEDEP}] )
 	libffi? ( >=virtual/libffi-3.0.13-r1:0=[${MULTILIB_USEDEP}] )
 	ncurses? ( >=sys-libs/ncurses-5.9-r3:5=[${MULTILIB_USEDEP}] )
-	ocaml? ( dev-lang/ocaml:0= )
-	udis86? ( >=dev-libs/udis86-1.7-r2:0=[pic(+),${MULTILIB_USEDEP}] )"
+	ocaml? ( dev-lang/ocaml:0= )"
 DEPEND="${COMMON_DEPEND}
 	dev-lang/perl
 	dev-python/sphinx
@@ -50,10 +51,10 @@ DEPEND="${COMMON_DEPEND}
 	libffi? ( virtual/pkgconfig )
 	${PYTHON_DEPS}"
 RDEPEND="${COMMON_DEPEND}
-	clang? ( !<=sys-devel/clang-9999-r99 )
+	clang? ( !<=sys-devel/clang-${PV}-r99 )
 	abi_x86_32? ( !<=app-emulation/emul-linux-x86-baselibs-20130224-r2
 		!app-emulation/emul-linux-x86-baselibs[-abi_x86_32(-)] )"
-PDEPEND="clang? ( =sys-devel/clang-9999-r100 )"
+PDEPEND="clang? ( =sys-devel/clang-${PV}-r100 )"
 
 # pypy gives me around 1700 unresolved tests due to open file limit
 # being exceeded. probably GC does not close them fast enough.
@@ -99,41 +100,22 @@ pkg_pretend() {
 
 	local CHECKREQS_DISK_BUILD=${build_size}M
 	check-reqs_pkg_pretend
+
+	if [[ ${MERGE_TYPE} != binary ]]; then
+		echo 'int main() {return 0;}' > "${T}"/test.cxx || die
+		ebegin "Trying to build a C++11 test program"
+		if ! $(tc-getCXX) -std=c++11 -o /dev/null "${T}"/test.cxx; then
+			eerror "LLVM-${PV} requires C++11-capable C++ compiler. Your current compiler"
+			eerror "does not seem to support -std=c++11 option. Please upgrade your compiler"
+			eerror "to gcc-4.7 or an equivalent version supporting C++11."
+			die "Currently active compiler does not support -std=c++11"
+		fi
+		eend ${?}
+	fi
 }
 
 pkg_setup() {
 	pkg_pretend
-
-	# need to check if the active compiler is ok
-
-	broken_gcc=( 3.2.2 3.2.3 3.3.2 4.1.1 )
-	broken_gcc_x86=( 3.4.0 3.4.2 )
-	broken_gcc_amd64=( 3.4.6 )
-
-	gcc_vers=$(gcc-fullversion)
-
-	if has "${gcc_vers}" "${broken_gcc[@]}"; then
-		elog "Your version of gcc is known to miscompile llvm."
-		elog "Check http://www.llvm.org/docs/GettingStarted.html for"
-		elog "possible solutions."
-		die "Your currently active version of gcc is known to miscompile llvm"
-	fi
-
-	if use abi_x86_32 && has "${gcc_vers}" "${broken_gcc_x86[@]}"; then
-		elog "Your version of gcc is known to miscompile llvm on x86"
-		elog "architectures.  Check"
-		elog "http://www.llvm.org/docs/GettingStarted.html for possible"
-		elog "solutions."
-		die "Your currently active version of gcc is known to miscompile llvm"
-	fi
-
-	if use abi_x86_64 && has "${gcc_vers}" "${broken_gcc_amd64[@]}"; then
-		elog "Your version of gcc is known to miscompile llvm in amd64"
-		elog "architectures.  Check"
-		elog "http://www.llvm.org/docs/GettingStarted.html for possible"
-		elog "solutions."
-		die "Your currently active version of gcc is known to miscompile llvm"
-	fi
 }
 
 src_unpack() {
@@ -160,8 +142,15 @@ src_unpack() {
 
 src_prepare() {
 	epatch "${FILESDIR}"/${PN}-3.2-nodoctargz.patch
+	epatch "${FILESDIR}"/${PN}-3.5-gcc-4.9.patch
 	epatch "${FILESDIR}"/${PN}-3.5-gentoo-install.patch
-	use clang && epatch "${FILESDIR}"/clang-3.5-gentoo-install.patch
+
+	if use clang; then
+		# Automatically select active system GCC's libraries, bugs #406163 and #417913
+		epatch "${FILESDIR}"/clang-3.5-gentoo-runtime-gcc-detection-v3.patch
+
+		epatch "${FILESDIR}"/clang-3.5-gentoo-install.patch
+	fi
 
 	if use prefix && use clang; then
 		sed -e "/^CFLAGS /s@-Werror@-I${EPREFIX}/usr/include@" \
@@ -205,6 +194,7 @@ multilib_src_configure() {
 		$(use_enable !debug optimized)
 		$(use_enable debug assertions)
 		$(use_enable debug expensive-checks)
+		$(use_enable libedit)
 		$(use_enable ncurses terminfo)
 		$(use_enable libffi)
 	)
@@ -233,10 +223,6 @@ multilib_src_configure() {
 
 	[[ ${bindings} ]] || bindings='none'
 	conf_flags+=( --enable-bindings=${bindings} )
-
-	if use udis86; then
-		conf_flags+=( --with-udis86 )
-	fi
 
 	if use libffi; then
 		local CPPFLAGS=${CPPFLAGS}
@@ -268,8 +254,8 @@ set_makeargs() {
 				opt llvm-as llvm-dis llc llvm-ar llvm-nm llvm-link lli
 				llvm-extract llvm-mc llvm-bcanalyzer llvm-diff macho-dump
 				llvm-objdump llvm-readobj llvm-rtdyld llvm-dwarfdump llvm-cov
-				llvm-size llvm-stress llvm-mcmarkup llvm-symbolizer obj2yaml
-				yaml2obj lto bugpoint
+				llvm-size llvm-stress llvm-mcmarkup llvm-profdata
+				llvm-symbolizer obj2yaml yaml2obj lto bugpoint
 			)
 
 			# the build system runs explicitly specified tools in parallel,

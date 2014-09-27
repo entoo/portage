@@ -1,10 +1,10 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-editors/gvim/gvim-9999.ebuild,v 1.16 2014/04/27 21:35:31 floppym Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-editors/gvim/gvim-9999.ebuild,v 1.18 2014/09/06 17:53:59 radhermit Exp $
 
 EAPI=5
 VIM_VERSION="7.4"
-PYTHON_COMPAT=( python{2_6,2_7,3_2,3_3,3_4} )
+PYTHON_COMPAT=( python{2_7,3_2,3_3,3_4} )
 PYTHON_REQ_USE=threads
 inherit eutils vim-doc flag-o-matic fdo-mime versionator bash-completion-r1 prefix python-single-r1
 
@@ -14,9 +14,9 @@ if [[ ${PV} == 9999* ]] ; then
 	EHG_PROJECT="vim"
 else
 	VIM_ORG_PATCHES="vim-patches-${PV}.patch.bz2"
-
 	SRC_URI="ftp://ftp.vim.org/pub/vim/unix/vim-${VIM_VERSION}.tar.bz2
-		http://dev.gentoo.org/~radhermit/vim/${VIM_ORG_PATCHES}"
+		http://dev.gentoo.org/~radhermit/vim/${VIM_ORG_PATCHES}
+		http://dev.gentoo.org/~radhermit/vim/vim-${VIM_VERSION}-gentoo-patches.tar.bz2"
 	KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd ~x86-interix ~amd64-linux ~x86-linux ~ppc-macos ~x86-macos ~x86-solaris"
 fi
 
@@ -61,7 +61,7 @@ RDEPEND="
 	perl? ( dev-lang/perl )
 	python? ( ${PYTHON_DEPS} )
 	racket? ( dev-scheme/racket )
-	ruby? ( || ( dev-lang/ruby:2.1 dev-lang/ruby:2.0 dev-lang/ruby:1.9 dev-lang/ruby:1.8 ) )
+	ruby? ( || ( dev-lang/ruby:2.1 dev-lang/ruby:2.0 dev-lang/ruby:1.9 ) )
 	selinux? ( sys-libs/libselinux )
 	session? ( x11-libs/libSM )
 	tcl? ( dev-lang/tcl )
@@ -93,6 +93,12 @@ src_prepare() {
 		if [[ -f "${WORKDIR}"/${VIM_ORG_PATCHES%.bz2} ]] ; then
 			# Apply any patches available from vim.org for this version
 			epatch "${WORKDIR}"/${VIM_ORG_PATCHES%.bz2}
+		fi
+
+		if [[ -d "${WORKDIR}"/patches/ ]]; then
+			# Gentoo patches to fix runtime issues, cross-compile errors, etc
+			EPATCH_SUFFIX="patch" EPATCH_FORCE="yes" \
+				epatch "${WORKDIR}"/patches/
 		fi
 	fi
 

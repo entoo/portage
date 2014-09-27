@@ -1,6 +1,50 @@
 # ChangeLog for dev-python/requests
 # Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/requests/ChangeLog,v 1.67 2014/08/11 22:22:59 blueness Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-python/requests/ChangeLog,v 1.77 2014/09/24 09:33:30 ago Exp $
+
+  24 Sep 2014; Agostino Sarubbo <ago@gentoo.org> requests-2.3.0.ebuild:
+  Stable for x86, wrt bug #513278
+
+  24 Sep 2014; Agostino Sarubbo <ago@gentoo.org> requests-2.3.0.ebuild:
+  Stable for ppc64, wrt bug #513278
+
+  24 Sep 2014; Agostino Sarubbo <ago@gentoo.org> requests-2.3.0.ebuild:
+  Stable for ppc, wrt bug #513278
+
+  23 Sep 2014; Mike Gilbert <floppym@gentoo.org>
+  -files/requests-0.12.1-setup.py.patch, -files/requests-0.13-python2.6.patch,
+  -files/requests-0.14.1-system-cacerts.patch,
+  -files/requests-0.14.1-system-libs.patch,
+  -files/requests-1.0.4-system-libs.patch,
+  -files/requests-1.1.0-system-cacerts.patch,
+  -files/requests-1.1.0-system-libs.patch, -requests-0.13.1.ebuild,
+  -requests-0.14.2-r1.ebuild:
+  More cleanup.
+
+  23 Sep 2014; Dirkjan Ochtman <djc@gentoo.org> -requests-1.2.2.ebuild,
+  -requests-2.0.0.ebuild, -requests-2.0.1.ebuild, -requests-2.1.0.ebuild,
+  -requests-2.2.0.ebuild, -requests-2.2.1.ebuild:
+  Remove a bunch of old versions
+
+*requests-2.4.1 (10 Sep 2014)
+
+  10 Sep 2014; Mike Gilbert <floppym@gentoo.org> +requests-2.4.1.ebuild:
+  Version bump, resolves bug 522466.
+
+*requests-2.4.0 (09 Sep 2014)
+
+  09 Sep 2014; Ian Delaney <idella4@gentoo.org>
+  +files/requests-2.4.0-system-cacerts.patch, +requests-2.4.0.ebuild:
+  bump
+
+  06 Sep 2014; Ian Delaney <idella4@gentoo.org> requests-2.3.0.ebuild:
+  re-add py3.2 to support reverse deps
+
+  28 Aug 2014; Naohiro Aota <naota@gentoo.org> requests-2.3.0.ebuild:
+  Add ~x86-fbsd. #509628
+
+  25 Aug 2014; Manuel Rüger <mrueg@gentoo.org> requests-2.3.0.ebuild:
+  Mark amd64 stable. Bug #513278.
 
   11 Aug 2014; Anthony G. Basile <blueness@gentoo.org> requests-0.13.1.ebuild,
   requests-0.14.2-r1.ebuild, requests-1.2.2.ebuild, requests-1.2.3.ebuild,

@@ -1,6 +1,18 @@
 # ChangeLog for media-plugins/gst-plugins-xvideo
 # Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-plugins/gst-plugins-xvideo/ChangeLog,v 1.208 2014/08/21 10:44:57 ago Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-plugins/gst-plugins-xvideo/ChangeLog,v 1.211 2014/09/15 08:23:11 ago Exp $
+
+  15 Sep 2014; Agostino Sarubbo <ago@gentoo.org>
+  gst-plugins-xvideo-0.10.36-r1.ebuild:
+  Stable for sparc, wrt bug #512012
+
+  25 Aug 2014; Agostino Sarubbo <ago@gentoo.org>
+  gst-plugins-xvideo-0.10.36-r1.ebuild:
+  Stable for alpha, wrt bug #512012
+
+  23 Aug 2014; Agostino Sarubbo <ago@gentoo.org>
+  gst-plugins-xvideo-0.10.36-r1.ebuild:
+  Stable for ia64, wrt bug #512012
 
   21 Aug 2014; Agostino Sarubbo <ago@gentoo.org>
   gst-plugins-xvideo-0.10.36-r1.ebuild:

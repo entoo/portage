@@ -1,6 +1,45 @@
 # ChangeLog for net-misc/dhcpcd
 # Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/dhcpcd/ChangeLog,v 1.417 2014/08/01 21:12:57 williamh Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-misc/dhcpcd/ChangeLog,v 1.425 2014/09/27 09:00:17 williamh Exp $
+
+*dhcpcd-6.4.7 (27 Sep 2014)
+
+  27 Sep 2014; William Hubbs <williamh@gentoo.org> +dhcpcd-6.4.7.ebuild:
+  version bump
+
+  20 Sep 2014; William Hubbs <williamh@gentoo.org> dhcpcd-6.4.3.ebuild,
+  dhcpcd-6.4.5.ebuild, dhcpcd-9999.ebuild:
+  Pass the value of CC as an argument to configure instead of using tc-export.
+
+  20 Sep 2014; William Hubbs <williamh@gentoo.org> dhcpcd-6.4.3.ebuild,
+  dhcpcd-6.4.5.ebuild, dhcpcd-9999.ebuild:
+  make sure we use the correct compiler by running tc-export CC
+
+*dhcpcd-6.4.5 (18 Sep 2014)
+
+  18 Sep 2014; William Hubbs <williamh@gentoo.org> +dhcpcd-6.4.5.ebuild,
+  -dhcpcd-6.4.4-r1.ebuild, -files/dhcpcd-6.4.4-fix-ipv6.patch:
+  new upstream release
+
+  18 Sep 2014; William Hubbs <williamh@gentoo.org> -dhcpcd-6.4.4.ebuild:
+  remove old
+
+*dhcpcd-6.4.4-r1 (18 Sep 2014)
+
+  18 Sep 2014; William Hubbs <williamh@gentoo.org> +dhcpcd-6.4.4-r1.ebuild,
+  +files/dhcpcd-6.4.4-fix-ipv6.patch:
+  import upstream patch to fix ipv6 related segmentation fault for bug #523128
+
+*dhcpcd-6.4.4 (16 Sep 2014)
+
+  16 Sep 2014; William Hubbs <williamh@gentoo.org> +dhcpcd-6.4.4.ebuild:
+  version bump
+
+  11 Sep 2014; William Hubbs <williamh@gentoo.org>
+  +files/dhcpcd-6.4.3-uclibc-fix.patch, dhcpcd-6.4.3.ebuild:
+  Add build-time fix for uclibc for bug #522158, thanks to David Flogeras for
+  the patch; Roy suggested that I should use this one for 6.4.3 instead of what
+  he has added to upstream.
 
   01 Aug 2014; William Hubbs <williamh@gentoo.org> -dhcpcd-5.6.4.ebuild,
   -dhcpcd-6.2.0-r1.ebuild, -files/dhcpcd-6.2.0-dynamic-init.patch,

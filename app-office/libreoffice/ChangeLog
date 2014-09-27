@@ -1,6 +1,112 @@
 # ChangeLog for app-office/libreoffice
 # Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-office/libreoffice/ChangeLog,v 1.566 2014/08/21 12:13:49 scarabeus Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-office/libreoffice/ChangeLog,v 1.587 2014/09/19 09:00:06 dilfridge Exp $
+
+  19 Sep 2014; Andreas K. Huettel <dilfridge@gentoo.org>
+  -libreoffice-4.2.5.2.ebuild:
+  Remove old
+
+  19 Sep 2014; Agostino Sarubbo <ago@gentoo.org> libreoffice-4.2.6.3.ebuild:
+  Stable for x86, wrt bug #522060
+
+  18 Sep 2014; Andreas K. Huettel <dilfridge@gentoo.org>
+  libreoffice-4.2.6.3.ebuild, libreoffice-4.2.9999.ebuild,
+  +files/libreoffice-4.2.6.3-jpeg9.patch:
+  Add backported compatibility patch for libjpeg-9, bug 479946
+
+  18 Sep 2014; Agostino Sarubbo <ago@gentoo.org> libreoffice-4.2.6.3.ebuild:
+  Stable for amd64, wrt bug #522060
+
+  16 Sep 2014; Andreas K. Huettel <dilfridge@gentoo.org>
+  libreoffice-4.3.1.2.ebuild, libreoffice-4.3.9999.ebuild,
+  libreoffice-9999-r2.ebuild:
+  Remove webdav useflag, it does not work as intended. (Disabling neon makes
+  the package just choose another backend.)
+
+*libreoffice-4.3.9999 (16 Sep 2014)
+*libreoffice-4.3.1.2 (16 Sep 2014)
+
+  16 Sep 2014; Andreas K. Huettel <dilfridge@gentoo.org>
+  +libreoffice-4.3.1.2.ebuild, +libreoffice-4.3.9999.ebuild,
+  libreoffice-9999-r2.ebuild,
+  +files/libreoffice-4.3.1.2-handle-collada-libs-seperately.patch,
+  +files/libreoffice-4.3.1.2-implement--with-system-coinmp.patch,
+  +files/libreoffice-4.3.1.2-implement--with-system-gltf.patch,
+  +files/libreoffice-4.3.1.2-upgrade-to-libgltf-0.0.1.patch:
+  Version bump, thanks to Andreas Sturmlechner
+
+  14 Sep 2014; Andreas K. Huettel <dilfridge@gentoo.org>
+  libreoffice-4.2.5.2.ebuild, libreoffice-4.2.6.3.ebuild,
+  libreoffice-4.2.9999.ebuild, libreoffice-9999-r2.ebuild:
+  Restrict libvisio dependency.
+
+  14 Sep 2014; Andreas K. Huettel <dilfridge@gentoo.org>
+  libreoffice-4.2.5.2.ebuild, libreoffice-4.2.6.3.ebuild,
+  libreoffice-4.2.9999.ebuild, libreoffice-9999-r2.ebuild:
+  Restrict libfreehand dependency.
+
+  14 Sep 2014; Andreas K. Huettel <dilfridge@gentoo.org>
+  libreoffice-4.2.5.2.ebuild, libreoffice-4.2.6.3.ebuild,
+  libreoffice-4.2.9999.ebuild, libreoffice-9999-r2.ebuild:
+  Restrict libcdr dependency.
+
+  14 Sep 2014; Andreas K. Huettel <dilfridge@gentoo.org>
+  libreoffice-4.2.5.2.ebuild, libreoffice-4.2.6.3.ebuild,
+  libreoffice-4.2.9999.ebuild, libreoffice-9999-r2.ebuild:
+  The slot operator on liborcus makes no sense.
+
+  13 Sep 2014; Andreas K. Huettel <dilfridge@gentoo.org>
+  libreoffice-4.2.5.2.ebuild, libreoffice-4.2.6.3.ebuild,
+  libreoffice-4.2.9999.ebuild:
+  Restrict libodfgen dependency.
+
+  13 Sep 2014; Andreas K. Huettel <dilfridge@gentoo.org>
+  libreoffice-4.2.5.2.ebuild, libreoffice-4.2.6.3.ebuild,
+  libreoffice-4.2.9999.ebuild:
+  Restrict libmwaw dependency.
+
+  13 Sep 2014; Andreas K. Huettel <dilfridge@gentoo.org>
+  libreoffice-4.2.5.2.ebuild, libreoffice-4.2.6.3.ebuild,
+  libreoffice-4.2.9999.ebuild:
+  Restrict libmspub dependency.
+
+  13 Sep 2014; Andreas K. Huettel <dilfridge@gentoo.org>
+  libreoffice-4.2.5.2.ebuild, libreoffice-4.2.6.3.ebuild,
+  libreoffice-4.2.9999.ebuild:
+  Restrict libetonyek dependency.
+
+  13 Sep 2014; Andreas K. Huettel <dilfridge@gentoo.org>
+  -libreoffice-4.2.6.2.ebuild:
+  Remove old
+
+*libreoffice-4.2.6.3 (09 Sep 2014)
+
+  09 Sep 2014; Andreas K. Huettel <dilfridge@gentoo.org>
+  +libreoffice-4.2.6.3.ebuild:
+  Version bump for bug 522060
+
+  07 Sep 2014; Tomáš Chvátal <scarabeus@gentoo.org> libreoffice-4.2.5.2.ebuild,
+  libreoffice-4.2.6.2.ebuild, libreoffice-4.2.9999.ebuild,
+  libreoffice-9999-r2.ebuild:
+  Restrict libebook dependency.
+
+  07 Sep 2014; Tomáš Chvátal <scarabeus@gentoo.org> libreoffice-4.2.5.2.ebuild,
+  libreoffice-4.2.6.2.ebuild, libreoffice-4.2.9999.ebuild,
+  libreoffice-9999-r2.ebuild:
+  Restrict libabw dependency.
+
+  07 Sep 2014; Tomáš Chvátal <scarabeus@gentoo.org> libreoffice-4.2.5.2.ebuild,
+  libreoffice-4.2.6.2.ebuild, libreoffice-4.2.9999.ebuild,
+  libreoffice-9999-r2.ebuild:
+  Update libwps dependencies.
+
+  07 Sep 2014; Tomáš Chvátal <scarabeus@gentoo.org> libreoffice-9999-r2.ebuild:
+  wpg and wpd bumped.
+
+*libreoffice-4.2.6.2 (23 Aug 2014)
+
+  23 Aug 2014; Tomáš Chvátal <scarabeus@gentoo.org> +libreoffice-4.2.6.2.ebuild:
+  Version bump to 4.2.6 fixes bug#520282.
 
   21 Aug 2014; Tomáš Chvátal <scarabeus@gentoo.org>
   -files/libreoffice-4.2.5.2-jpeg-9a.patch, libreoffice-4.2.5.2.ebuild:

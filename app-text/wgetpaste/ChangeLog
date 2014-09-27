@@ -1,6 +1,24 @@
 # ChangeLog for app-text/wgetpaste
 # Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-text/wgetpaste/ChangeLog,v 1.139 2014/08/15 11:49:51 maksbotan Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-text/wgetpaste/ChangeLog,v 1.142 2014/09/14 15:32:19 mrueg Exp $
+
+  14 Sep 2014; Manuel Rüger <mrueg@gentoo.org> wgetpaste-2.22.ebuild,
+  wgetpaste-2.25-r2.ebuild:
+  Install zsh-completion by default.
+
+*wgetpaste-2.25-r2 (14 Sep 2014)
+
+  14 Sep 2014; Maxim Koltsov <maksbotan@gentoo.org> +wgetpaste-2.25-r2.ebuild,
+  -wgetpaste-2.25-r1.ebuild, files/wgetpaste-2.25-pinnwand.patch:
+  Fix bpaste as they use SSL by default, bug #521854 comment 6
+
+*wgetpaste-2.25-r1 (07 Sep 2014)
+
+  07 Sep 2014; Maxim Koltsov <maksbotan@gentoo.org>
+  +files/wgetpaste-2.25-pinnwand.patch, +wgetpaste-2.25-r1.ebuild,
+  -wgetpaste-2.25.ebuild, files/wgetpaste-config-services:
+  Added patch for pinnwand engine, currently used on bpaste.net, thanks to
+  nvinson. Bug #521854.
 
 *wgetpaste-2.25 (15 Aug 2014)
 

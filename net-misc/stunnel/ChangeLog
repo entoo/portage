@@ -1,6 +1,24 @@
 # ChangeLog for net-misc/stunnel
 # Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/stunnel/ChangeLog,v 1.180 2014/08/12 22:18:47 blueness Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-misc/stunnel/ChangeLog,v 1.185 2014/09/25 22:16:03 blueness Exp $
+
+  25 Sep 2014; Anthony G. Basile <blueness@gentoo.org> stunnel-5.02.ebuild,
+  stunnel-5.03.ebuild:
+  Backport updated SRC_URI, bug #523534
+
+  23 Sep 2014; Anthony G. Basile <blueness@gentoo.org> stunnel-5.04.ebuild:
+  Update SRC_URI to use the archives for older versions
+
+  23 Sep 2014; Anthony G. Basile <blueness@gentoo.org> stunnel-5.04.ebuild:
+  Add upstream mirrors, bug #523534
+
+  22 Sep 2014; Anthony G. Basile <blueness@gentoo.org> stunnel-5.03.ebuild:
+  Stable amd64 and x86, bug #519400
+
+*stunnel-5.04 (22 Sep 2014)
+
+  22 Sep 2014; Anthony G. Basile <blueness@gentoo.org> +stunnel-5.04.ebuild:
+  Version bump
 
   12 Aug 2014; Anthony G. Basile <blueness@gentoo.org> stunnel-5.03.ebuild:
   Stable on arm, ppc and ppc64.  Bug #519400

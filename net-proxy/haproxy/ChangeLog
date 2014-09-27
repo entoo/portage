@@ -1,6 +1,18 @@
 # ChangeLog for net-proxy/haproxy
 # Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-proxy/haproxy/ChangeLog,v 1.100 2014/08/11 20:06:25 idl0r Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-proxy/haproxy/ChangeLog,v 1.103 2014/09/07 10:45:45 ago Exp $
+
+  07 Sep 2014; Agostino Sarubbo <ago@gentoo.org> haproxy-1.4.25.ebuild:
+  Stable for ppc, wrt bug #514930
+
+*haproxy-1.5.4 (03 Sep 2014)
+
+  03 Sep 2014; Christian Ruppert <idl0r@gentoo.org> -haproxy-1.5.3.ebuild,
+  +haproxy-1.5.4.ebuild:
+  Version bump, bug 522018
+
+  30 Aug 2014; Chema Alonso <nimiux@gentoo.org> haproxy-1.4.25.ebuild:
+  Stable for amd64 wrt bug #514930
 
   11 Aug 2014; Christian Ruppert <idl0r@gentoo.org> haproxy-1.5.3.ebuild:
   Minor: Fix CFLAGS not being respected for "halog"

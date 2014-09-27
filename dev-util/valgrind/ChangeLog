@@ -1,6 +1,18 @@
 # ChangeLog for dev-util/valgrind
 # Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-util/valgrind/ChangeLog,v 1.174 2014/08/14 16:12:11 phajdan.jr Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-util/valgrind/ChangeLog,v 1.177 2014/09/13 00:57:21 blueness Exp $
+
+*valgrind-3.10.0 (13 Sep 2014)
+
+  13 Sep 2014; Anthony G. Basile <blueness@gentoo.org>
+  +files/valgrind-3.10.0-non-exec-stack.patch, +valgrind-3.10.0.ebuild:
+  Version bump
+
+  10 Sep 2014; Anthony G. Basile <blueness@gentoo.org> valgrind-3.9.0.ebuild:
+  Stable on arm, bug #518666
+
+  09 Sep 2014; Chema Alonso <nimiux@gentoo.org> valgrind-3.9.0.ebuild:
+  Stable for amd64 wrt bug #518666
 
   14 Aug 2014; Pawel Hajdan jr <phajdan.jr@gentoo.org> valgrind-3.9.0.ebuild:
   x86 stable wrt bug #518666

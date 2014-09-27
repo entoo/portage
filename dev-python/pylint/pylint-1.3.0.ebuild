@@ -1,6 +1,6 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/pylint/pylint-1.3.0.ebuild,v 1.2 2014/08/05 02:52:57 idella4 Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-python/pylint/pylint-1.3.0.ebuild,v 1.3 2014/09/10 13:23:50 idella4 Exp $
 
 EAPI=5
 
@@ -28,10 +28,9 @@ PATCHES=( "${FILESDIR}"/${PN}-0.26.0-gtktest.patch )
 # Usual. Requ'd for impl specific failures in test phase
 DISTUTILS_IN_SOURCE_BUILD=1
 
-python_prepare_all() {
+python_compile_all() {
 	# selection of straight html triggers a trivial annoying bug, we skirt it
 	use doc && emake -C doc singlehtml
-	distutils-r1_python_prepare_all
 }
 
 python_test() {

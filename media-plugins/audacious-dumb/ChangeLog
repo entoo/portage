@@ -1,6 +1,16 @@
 # ChangeLog for media-plugins/audacious-dumb
-# Copyright 1999-2013 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-plugins/audacious-dumb/ChangeLog,v 1.46 2013/07/01 10:09:10 joker Exp $
+# Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/media-plugins/audacious-dumb/ChangeLog,v 1.48 2014/09/09 13:40:15 joker Exp $
+
+  09 Sep 2014; Christian Birchinger <joker@gentoo.org>
+  audacious-dumb-0.65.ebuild:
+  Bump EAPI
+
+*audacious-dumb-0.83 (09 Sep 2014)
+
+  09 Sep 2014; Christian Birchinger <joker@gentoo.org>
+  +audacious-dumb-0.83.ebuild:
+  Version bump
 
 *audacious-dumb-0.82 (01 Jul 2013)
 
@@ -221,4 +231,3 @@
   08 May 2006; Christian Birchinger <joker@gentoo.org> +metadata.xml,
   +audacious-dumb-0.6.ebuild:
   Initial import
-

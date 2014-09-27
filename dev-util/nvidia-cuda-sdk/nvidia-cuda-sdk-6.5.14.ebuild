@@ -1,6 +1,6 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-util/nvidia-cuda-sdk/nvidia-cuda-sdk-6.5.14.ebuild,v 1.2 2014/08/21 13:50:16 jlec Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-util/nvidia-cuda-sdk/nvidia-cuda-sdk-6.5.14.ebuild,v 1.5 2014/09/19 09:14:35 jlec Exp $
 
 EAPI=5
 
@@ -25,7 +25,7 @@ RDEPEND="
 		media-libs/freeimage
 		media-libs/glew
 		virtual/mpi
-		>=x11-drivers/nvidia-drivers-334.16-r7[uvm]
+		>=x11-drivers/nvidia-drivers-340.32[uvm]
 		)"
 DEPEND="${RDEPEND}"
 
@@ -62,6 +62,7 @@ src_prepare() {
 		-e "/LINK/s:g++:$(tc-getCXX) ${LDFLAGS}:g" \
 		-e "/CC/s:gcc:$(tc-getCC):g" \
 		-e "/GCC/s:g++:$(tc-getCXX):g" \
+		-e "/NVCC /s|\(:=\).*|:= ${EPREFIX}/opt/cuda/bin/nvcc|g" \
 		-e "/ CFLAGS/s|\(:=\)|\1 ${CFLAGS}|g" \
 		-e "/ CXXFLAGS/s|\(:=\)|\1 ${CXXFLAGS}|g" \
 		-e "/NVCCFLAGS/s|\(:=\)|\1 ${NVCCFLAGS} |g" \

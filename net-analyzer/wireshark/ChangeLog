@@ -1,6 +1,44 @@
 # ChangeLog for net-analyzer/wireshark
 # Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-analyzer/wireshark/ChangeLog,v 1.645 2014/08/12 09:59:34 jer Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-analyzer/wireshark/ChangeLog,v 1.656 2014/09/27 10:58:51 jer Exp $
+
+  27 Sep 2014; Jeroen Roovers <jer@gentoo.org> -wireshark-1.10.9.ebuild,
+  -files/wireshark-1.10.1-oldlibs.patch,
+  -files/wireshark-1.10.6-gtk-deprecated-warnings.patch, metadata.xml:
+  Old.
+
+  27 Sep 2014; Agostino Sarubbo <ago@gentoo.org> wireshark-1.12.1.ebuild:
+  Stable for ppc, wrt bug #522968
+
+  27 Sep 2014; Agostino Sarubbo <ago@gentoo.org> wireshark-1.12.1.ebuild:
+  Stable for ia64, wrt bug #522968
+
+  20 Sep 2014; Agostino Sarubbo <ago@gentoo.org> wireshark-1.12.1.ebuild:
+  Stable for alpha, wrt bug #522968
+
+  19 Sep 2014; Agostino Sarubbo <ago@gentoo.org> wireshark-1.12.1.ebuild:
+  Stable for ppc64, wrt bug #522968
+
+  19 Sep 2014; Agostino Sarubbo <ago@gentoo.org> wireshark-1.12.1.ebuild:
+  Stable for sparc, wrt bug #522968
+
+  18 Sep 2014; Jeroen Roovers <jer@gentoo.org> wireshark-1.12.1.ebuild:
+  Fix configuring without libnl (bug #523154 by Stuart Shelton).
+
+  18 Sep 2014; Agostino Sarubbo <ago@gentoo.org> wireshark-1.12.1.ebuild:
+  Stable for x86, wrt bug #522968
+
+  18 Sep 2014; Agostino Sarubbo <ago@gentoo.org> wireshark-1.12.1.ebuild:
+  Stable for amd64, wrt bug #522968
+
+  17 Sep 2014; Jeroen Roovers <jer@gentoo.org> wireshark-1.12.1.ebuild:
+  Stable for HPPA (bug #522968).
+
+*wireshark-1.12.1 (16 Sep 2014)
+
+  16 Sep 2014; Jeroen Roovers <jer@gentoo.org> -wireshark-1.12.0.ebuild,
+  +wireshark-1.12.1.ebuild:
+  Version bump (bug #522968).
 
   12 Aug 2014; Jeroen Roovers <jer@gentoo.org> -wireshark-1.8.15.ebuild,
   -wireshark-1.8.15-r1.ebuild, -wireshark-1.10.8.ebuild,

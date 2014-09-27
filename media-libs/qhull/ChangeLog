@@ -1,6 +1,23 @@
 # ChangeLog for media-libs/qhull
-# Copyright 1999-2013 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/media-libs/qhull/ChangeLog,v 1.56 2013/07/18 12:36:03 chithanh Exp $
+# Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/media-libs/qhull/ChangeLog,v 1.59 2014/09/26 11:18:39 grobian Exp $
+
+  26 Sep 2014; Fabian Groffen <grobian@gentoo.org> qhull-2012.1-r3.ebuild:
+  Fix out of Prefix rm, bug #523422
+
+*qhull-2012.1-r3 (17 Sep 2014)
+
+  17 Sep 2014; Justin Lecher <jlec@gentoo.org> -qhull-2012.1-r2.ebuild,
+  +qhull-2012.1-r3.ebuild, -files/qhull-2012.1-pc.patch, -files/qhull.pc.in:
+  Drop pc support again as matplotlib works better without
+
+*qhull-2012.1-r2 (17 Sep 2014)
+
+  17 Sep 2014; Justin Lecher <jlec@gentoo.org> -qhull-3.1-r1.ebuild,
+  -qhull-2010.1-r2.ebuild, +qhull-2012.1-r2.ebuild,
+  +files/qhull-2012.1-64bit.patch, +files/qhull-2012.1-pc.patch,
+  +files/qhull.pc.in, metadata.xml:
+  Import patches from fedora, bump to EAPI=5; drop old
 
   18 Jul 2013; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
   qhull-2012.1-r1.ebuild:

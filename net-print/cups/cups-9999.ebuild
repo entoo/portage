@@ -1,6 +1,6 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-print/cups/cups-9999.ebuild,v 1.60 2014/06/18 20:44:03 mgorny Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-print/cups/cups-9999.ebuild,v 1.63 2014/09/07 20:48:21 dilfridge Exp $
 
 EAPI=5
 
@@ -16,7 +16,7 @@ MY_PV=${PV/_rc/rc}
 MY_PV=${MY_PV/_beta/b}
 
 if [[ ${PV} == *9999 ]]; then
-	inherit git-2
+	inherit git-r3
 	EGIT_REPO_URI="http://www.cups.org/cups.git"
 	if [[ ${PV} != 9999 ]]; then
 		EGIT_BRANCH=branch-${PV/.9999}

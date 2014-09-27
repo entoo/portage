@@ -1,6 +1,6 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-block/fio/fio-2.1.11-r1.ebuild,v 1.2 2014/08/12 12:08:29 blueness Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-block/fio/fio-2.1.11-r1.ebuild,v 1.4 2014/09/24 19:48:36 maekke Exp $
 
 EAPI="5"
 PYTHON_COMPAT=( python2_7 )
@@ -15,7 +15,7 @@ SRC_URI="http://brick.kernel.dk/snaps/${MY_P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc ~ppc64 ~x86"
+KEYWORDS="~amd64 ~arm ~ppc ~ppc64 ~x86"
 IUSE="aio glusterfs gnuplot gtk numa rbd zlib"
 
 DEPEND="aio? ( dev-libs/libaio )
@@ -36,7 +36,6 @@ RDEPEND="${DEPEND}
 S="${WORKDIR}/${MY_P}"
 
 src_prepare() {
-	chmod g-w "${T}"
 	sed -i '/^DEBUGFLAGS/s, -D_FORTIFY_SOURCE=2,,g' Makefile || die
 	epatch_user
 
@@ -49,6 +48,7 @@ src_prepare() {
 }
 
 src_configure() {
+	chmod g-w "${T}"
 	# not a real configure script
 	./configure \
 		--extra-cflags="${CFLAGS} ${CPPFLAGS}" \

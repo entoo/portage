@@ -1,6 +1,16 @@
 # ChangeLog for Gentoo/sparc profile
 # Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/profiles/arch/sparc/ChangeLog,v 1.227 2014/08/21 14:18:24 armin76 Exp $
+# $Header: /var/cvsroot/gentoo-x86/profiles/arch/sparc/ChangeLog,v 1.230 2014/09/16 17:12:06 chithanh Exp $
+
+  16 Sep 2014; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  package.use.mask:
+  Mask xorg-server glamor/wayland flags
+
+  01 Sep 2014; Julian Ospald <hasufell@gentoo.org> package.mask:
+  mask >=media-video/mpv-0.4.2 explicitly wrt #521808
+
+  25 Aug 2014; Raúl Porcel <armin76@gentoo.org> use.mask:
+  Use.mask zmq, bug #442188
 
   21 Aug 2014; Raúl Porcel <armin76@gentoo.org> package.use.mask, use.mask:
   Use.mask tcmalloc and jemalloc as they aren't keyworded on sparc

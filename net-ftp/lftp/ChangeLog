@@ -1,6 +1,18 @@
 # ChangeLog for net-ftp/lftp
 # Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-ftp/lftp/ChangeLog,v 1.479 2014/08/14 17:15:50 phajdan.jr Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-ftp/lftp/ChangeLog,v 1.482 2014/09/27 08:05:31 jer Exp $
+
+  27 Sep 2014; Jeroen Roovers <jer@gentoo.org> lftp-4.5.5.ebuild:
+  Stable for HPPA (bug #523654).
+
+  04 Sep 2014; Jeroen Roovers <jer@gentoo.org> lftp-4.5.5.ebuild,
+  +files/lftp-4.5.5-no_ssl.patch:
+  Fix building with no SSL support.
+
+*lftp-4.5.5 (04 Sep 2014)
+
+  04 Sep 2014; Jeroen Roovers <jer@gentoo.org> +lftp-4.5.5.ebuild:
+  Version bump.
 
   14 Aug 2014; Pawel Hajdan jr <phajdan.jr@gentoo.org> lftp-4.5.3.ebuild:
   x86 stable wrt bug #518476

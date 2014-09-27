@@ -1,6 +1,17 @@
 # ChangeLog for dev-perl/Net-SMTP-TLS-ButMaintained
-# Copyright 1999-2013 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-perl/Net-SMTP-TLS-ButMaintained/ChangeLog,v 1.7 2013/08/16 08:35:26 patrick Exp $
+# Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-perl/Net-SMTP-TLS-ButMaintained/ChangeLog,v 1.9 2014/09/03 18:28:10 zlogene Exp $
+
+  03 Sep 2014; Mikle Kolyada <zlogene@gentoo.org>
+  -Net-SMTP-TLS-ButMaintained-0.210.0.ebuild:
+  Drop old.
+
+*Net-SMTP-TLS-ButMaintained-0.240.0-r1 (26 Aug 2014)
+
+  26 Aug 2014; Ian Stakenvicius (_AxS_) <axs@gentoo.org>
+  +Net-SMTP-TLS-ButMaintained-0.240.0-r1.ebuild,
+  -Net-SMTP-TLS-ButMaintained-0.240.0.ebuild:
+  bumped EAPI to 5 to help with dev-lang/perl upgrade
 
 *Net-SMTP-TLS-ButMaintained-0.240.0 (16 Aug 2013)
 

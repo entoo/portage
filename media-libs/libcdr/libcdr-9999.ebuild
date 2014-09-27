@@ -1,6 +1,6 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/media-libs/libcdr/libcdr-9999.ebuild,v 1.11 2014/04/14 10:50:12 scarabeus Exp $
+# $Header: /var/cvsroot/gentoo-x86/media-libs/libcdr/libcdr-9999.ebuild,v 1.12 2014/09/14 08:48:56 dilfridge Exp $
 
 EAPI=5
 
@@ -9,8 +9,8 @@ inherit base eutils
 [[ ${PV} == 9999 ]] && inherit autotools git-2
 
 DESCRIPTION="Library parsing the Corel cdr documents"
-HOMEPAGE="http://www.freedesktop.org/wiki/Software/libcdr"
-[[ ${PV} == 9999 ]] || SRC_URI="http://dev-www.libreoffice.org/src/${P}.tar.xz"
+HOMEPAGE="https://wiki.documentfoundation.org/DLP/Libraries/libcdr"
+[[ ${PV} == 9999 ]] || SRC_URI="http://dev-www.libreoffice.org/src/${PN}/${P}.tar.xz"
 
 LICENSE="MPL-2.0"
 SLOT="0"
@@ -18,14 +18,12 @@ SLOT="0"
 IUSE="doc static-libs"
 
 RDEPEND="
-	app-text/libwpd:0.9
-	app-text/libwpg:0.2
 	dev-libs/icu:=
+	dev-libs/librevenge
 	media-libs/lcms:2
 	sys-libs/zlib
 "
 DEPEND="${RDEPEND}
-	dev-libs/boost
 	sys-devel/libtool
 	virtual/pkgconfig
 	doc? ( app-doc/doxygen )

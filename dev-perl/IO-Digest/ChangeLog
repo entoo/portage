@@ -1,6 +1,25 @@
 # ChangeLog for dev-perl/IO-Digest
 # Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-perl/IO-Digest/ChangeLog,v 1.24 2014/07/22 19:40:15 dilfridge Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-perl/IO-Digest/ChangeLog,v 1.28 2014/08/28 11:52:14 zlogene Exp $
+
+  28 Aug 2014; Mikle Kolyada <zlogene@gentoo.org> -IO-Digest-0.100.0.ebuild,
+  IO-Digest-0.110.0-r2.ebuild:
+  x86 stable wrt bug #520848
+
+*IO-Digest-0.110.0-r2 (26 Aug 2014)
+
+  26 Aug 2014; Ian Stakenvicius (_AxS_) <axs@gentoo.org>
+  +IO-Digest-0.110.0-r2.ebuild, -IO-Digest-0.110.0-r1.ebuild:
+  It would help if I actually changed the EAPI value when i revbumped.
+
+  25 Aug 2014; Manuel Rüger <mrueg@gentoo.org> IO-Digest-0.110.0-r1.ebuild:
+  Mark amd64 stable. Bug #520848.
+
+*IO-Digest-0.110.0-r1 (25 Aug 2014)
+
+  25 Aug 2014; Ian Stakenvicius (_AxS_) <axs@gentoo.org>
+  +IO-Digest-0.110.0-r1.ebuild, -IO-Digest-0.110.0.ebuild:
+  bumped EAPI to 5 to help with dev-lang/perl upgrades
 
   22 Jul 2014; Andreas K. Huettel <dilfridge@gentoo.org>
   IO-Digest-0.100.0.ebuild, IO-Digest-0.110.0.ebuild:

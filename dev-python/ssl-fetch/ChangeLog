@@ -1,6 +1,27 @@
 # ChangeLog for dev-python/ssl-fetch
 # Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/ssl-fetch/ChangeLog,v 1.19 2014/08/18 06:59:52 blueness Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-python/ssl-fetch/ChangeLog,v 1.26 2014/09/24 09:33:27 ago Exp $
+
+  24 Sep 2014; Agostino Sarubbo <ago@gentoo.org> ssl-fetch-0.2.ebuild:
+  Stable for x86, wrt bug #513278
+
+  24 Sep 2014; Agostino Sarubbo <ago@gentoo.org> ssl-fetch-0.2.ebuild:
+  Stable for ppc64, wrt bug #513278
+
+  24 Sep 2014; Agostino Sarubbo <ago@gentoo.org> ssl-fetch-0.2.ebuild:
+  Stable for ppc, wrt bug #513278
+
+  03 Sep 2014; Christoph Junghans <ottxor@gentoo.org> ssl-fetch-0.2.1.ebuild:
+  added ~x64-macos (tested by me)
+
+  28 Aug 2014; Naohiro Aota <naota@gentoo.org> ssl-fetch-0.2.1.ebuild:
+  Add ~x86-fbsd. failed to add to 0.2.1 #509628
+
+  28 Aug 2014; Naohiro Aota <naota@gentoo.org> ssl-fetch-0.2.ebuild:
+  Add ~x86-fbsd. #509628
+
+  25 Aug 2014; Manuel Rüger <mrueg@gentoo.org> ssl-fetch-0.2.ebuild:
+  Mark amd64 stable. Bug #513278.
 
   18 Aug 2014; Anthony G. Basile <blueness@gentoo.org> ssl-fetch-0.2.1.ebuild,
   ssl-fetch-0.2.ebuild, ssl-fetch-9999.ebuild:

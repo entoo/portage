@@ -1,6 +1,6 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-fs/eudev/eudev-9999.ebuild,v 1.60 2014/08/22 14:26:14 blueness Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-fs/eudev/eudev-9999.ebuild,v 1.63 2014/09/19 11:38:04 blueness Exp $
 
 EAPI="5"
 
@@ -21,7 +21,7 @@ HOMEPAGE="https://github.com/gentoo/eudev"
 
 LICENSE="LGPL-2.1 MIT GPL-2"
 SLOT="0"
-IUSE="doc gudev +hwdb +kmod introspection +keymap +modutils +openrc +rule-generator selinux static-libs test"
+IUSE="doc gudev +hwdb +kmod introspection +keymap +modutils +rule-generator selinux static-libs test"
 
 COMMON_DEPEND=">=sys-apps/util-linux-2.20
 	gudev? ( >=dev-libs/glib-2.34.3:2[${MULTILIB_USEDEP}] )
@@ -55,9 +55,9 @@ RDEPEND="${COMMON_DEPEND}
 	!sys-fs/udev
 	!sys-apps/systemd"
 
-PDEPEND="hwdb? ( >=sys-apps/hwids-20140304[udev] )
-	keymap? ( >=sys-apps/hwids-20140304[udev] )
-	openrc? ( >=sys-fs/udev-init-scripts-26 )"
+PDEPEND=">=sys-fs/udev-init-scripts-26
+	hwdb? ( >=sys-apps/hwids-20140304[udev] )
+	keymap? ( >=sys-apps/hwids-20140304[udev] )"
 
 REQUIRED_USE="keymap? ( hwdb )"
 
@@ -106,16 +106,14 @@ src_prepare() {
 
 	epatch_user
 
-	if [[ ! -e configure ]]; then
-		if use doc; then
-			gtkdocize --docdir docs || die "gtkdocize failed"
-		else
-			echo 'EXTRA_DIST =' > docs/gtk-doc.make
-		fi
-		eautoreconf
+	if use doc; then
+		gtkdocize --docdir docs || die "gtkdocize failed"
 	else
-		elibtoolize
+		echo 'EXTRA_DIST =' > docs/gtk-doc.make
 	fi
+	# This may break without WANT_AUTOMAKE=1.13, but we
+	# we want this so we can fix problems upstream.
+	eautoreconf
 }
 
 multilib_src_configure() {
@@ -134,7 +132,6 @@ multilib_src_configure() {
 		--docdir=/usr/share/doc/${PF}
 		--libdir=/usr/$(get_libdir)
 		--with-rootlibexecdir=/lib/udev
-		--with-firmware-path="${EPREFIX}usr/lib/firmware/updates:${EPREFIX}usr/lib/firmware:${EPREFIX}lib/firmware/updates:${EPREFIX}lib/firmware"
 		--with-html-dir="/usr/share/doc/${PF}/html"
 		--enable-split-usr
 		--exec-prefix=/
@@ -208,7 +205,7 @@ multilib_src_install_all() {
 	prune_libtool_files --all
 	rm -rf "${ED}"/usr/share/doc/${PF}/LICENSE.*
 
-	use rule-generator && use openrc && doinitd "${FILESDIR}"/udev-postmount
+	use rule-generator && doinitd "${FILESDIR}"/udev-postmount
 
 	# drop distributed hwdb files, they override sys-apps/hwids
 	rm -f "${ED}"/etc/udev/hwdb.d/*.hwdb
@@ -264,7 +261,7 @@ pkg_postinst() {
 	ewarn "upgrade go into effect:"
 	ewarn "\t/etc/init.d/udev --nodeps restart"
 
-	if use rule-generator && use openrc && \
+	if use rule-generator && \
 	[[ -x $(type -P rc-update) ]] && rc-update show | grep udev-postmount | grep -qsv 'boot\|default\|sysinit'; then
 		ewarn
 		ewarn "Please add the udev-postmount init script to your default runlevel"

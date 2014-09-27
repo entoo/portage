@@ -1,6 +1,18 @@
 # ChangeLog for www-client/seamonkey-bin
 # Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/www-client/seamonkey-bin/ChangeLog,v 1.206 2014/07/05 11:23:50 ago Exp $
+# $Header: /var/cvsroot/gentoo-x86/www-client/seamonkey-bin/ChangeLog,v 1.208 2014/09/26 15:20:32 axs Exp $
+
+*seamonkey-bin-2.29.1 (26 Sep 2014)
+
+  26 Sep 2014; Ian Stakenvicius (_AxS_) <axs@gentoo.org>
+  +seamonkey-bin-2.29.1.ebuild, -seamonkey-bin-2.29.ebuild:
+  security bump, bug 523652 ; removed old
+
+*seamonkey-bin-2.29 (09 Sep 2014)
+
+  09 Sep 2014; Jeff Horelick <jdhore@gentoo.org> +seamonkey-bin-2.29.ebuild,
+  -seamonkey-bin-2.25.ebuild, -seamonkey-bin-2.26.ebuild:
+  Version bump. Remove old.
 
   05 Jul 2014; Agostino Sarubbo <ago@gentoo.org> seamonkey-bin-2.26.1.ebuild:
   Stable for x86, wrt bug #512896

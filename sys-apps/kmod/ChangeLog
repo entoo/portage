@@ -1,6 +1,28 @@
 # ChangeLog for sys-apps/kmod
 # Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/kmod/ChangeLog,v 1.165 2014/07/22 09:24:44 klausman Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/kmod/ChangeLog,v 1.170 2014/09/21 10:59:57 ssuominen Exp $
+
+  21 Sep 2014; Samuli Suominen <ssuominen@gentoo.org> -files/kmod-static-nodes,
+  -kmod-16.ebuild, -kmod-17.ebuild, -kmod-18.ebuild:
+  old
+
+  21 Sep 2014; Agostino Sarubbo <ago@gentoo.org> kmod-18-r1.ebuild:
+  Stable for sparc, wrt bug #517106
+
+  21 Sep 2014; Agostino Sarubbo <ago@gentoo.org> kmod-18-r1.ebuild:
+  Stable for ia64, wrt bug #517106
+
+  02 Sep 2014; Richard Yao <ryao@gentoo.org> kmod-16.ebuild, kmod-17.ebuild,
+  kmod-18-r1.ebuild, kmod-18.ebuild, kmod-9999.ebuild:
+  src_configure() should use EPREFIX, not EROOT. The previous commit was not
+  correct from the perspective of Catalyst. Thanks goes to Arfever for pointing
+  it out.
+
+  29 Aug 2014; Richard Yao <ryao@gentoo.org> kmod-16.ebuild, kmod-17.ebuild,
+  kmod-18-r1.ebuild, kmod-18.ebuild, kmod-9999.ebuild:
+  Use ${EROOT} instead of / or ${ROOT}. This lets things build on Gentoo Prefix
+  and should allow cross compilation with Catalyst. WilliamH gave his okay in
+  IRC for the non-maintainer commit.
 
   22 Jul 2014; Tobias Klausmann <klausman@gentoo.org> kmod-18-r1.ebuild:
   Stable on alpha, bug #517106

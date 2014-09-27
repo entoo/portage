@@ -1,6 +1,24 @@
 # ChangeLog for net-dns/knot
 # Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-dns/knot/ChangeLog,v 1.27 2014/05/27 13:28:32 scarabeus Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-dns/knot/ChangeLog,v 1.30 2014/09/15 15:48:37 scarabeus Exp $
+
+*knot-1.5.3 (15 Sep 2014)
+
+  15 Sep 2014; Tomáš Chvátal <scarabeus@gentoo.org> +knot-1.5.3.ebuild,
+  -knot-1.5.2.ebuild:
+  Version bump to 1.5.3.
+
+*knot-1.5.2 (09 Sep 2014)
+
+  09 Sep 2014; Tomáš Chvátal <scarabeus@gentoo.org> +knot-1.5.2.ebuild,
+  -knot-1.5.1.ebuild:
+  Version bump to 1.5.2. As requested by ocaleta over mail.
+
+*knot-1.5.1 (29 Aug 2014)
+
+  29 Aug 2014; Tomáš Chvátal <scarabeus@gentoo.org> +knot-1.5.1.ebuild,
+  -knot-1.4.6.ebuild:
+  Version bump to latest. Drop older.
 
 *knot-1.4.6 (27 May 2014)
 

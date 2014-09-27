@@ -1,6 +1,35 @@
 # ChangeLog for sys-apps/less
 # Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/less/ChangeLog,v 1.182 2014/02/12 13:55:57 zx2c4 Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/less/ChangeLog,v 1.189 2014/09/22 08:01:45 polynomial-c Exp $
+
+*less-468 (22 Sep 2014)
+
+  22 Sep 2014; Lars Wendler <polynomial-c@gentoo.org> -less-436.ebuild,
+  -less-441.ebuild, -less-444.ebuild, -less-451.ebuild, -less-457.ebuild,
+  -less-462.ebuild, +less-468.ebuild, -files/code2color.patch:
+  Version bump. Removed old.
+
+  11 Sep 2014; Mike Frysinger <vapier@gentoo.org> less-458.ebuild:
+  Mark stable for all #521952.
+
+  07 Sep 2014; Agostino Sarubbo <ago@gentoo.org> less-458.ebuild:
+  Stable for ppc, wrt bug #521952
+
+  04 Sep 2014; Jeroen Roovers <jer@gentoo.org> less-458.ebuild:
+  Stable for HPPA (bug #521952).
+
+  03 Sep 2014; Mikle Kolyada <zlogene@gentoo.org> less-458.ebuild:
+  amd64 stable wrt bug #521952
+
+*less-466 (02 Sep 2014)
+
+  02 Sep 2014; Lars Wendler <polynomial-c@gentoo.org> -less-443.ebuild,
+  -less-445.ebuild, -less-445-r1.ebuild, -less-449.ebuild, -less-450.ebuild,
+  -less-456.ebuild, -less-459.ebuild, -less-460.ebuild, +less-466.ebuild:
+  Version bump. Removed old.
+
+  25 Aug 2014; Mike Gilbert <floppym@gentoo.org> files/less.envd:
+  Revert SYSTEMD_LESS; systemd has a better default hard-coded.
 
   12 Feb 2014; Jason A. Donenfeld <zx2c4@gentoo.org> files/less.envd:
   Prepare for next systemd release.

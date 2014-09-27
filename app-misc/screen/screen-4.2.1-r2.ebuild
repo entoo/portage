@@ -1,6 +1,6 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-misc/screen/screen-4.2.1-r2.ebuild,v 1.2 2014/08/23 09:14:27 jer Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-misc/screen/screen-4.2.1-r2.ebuild,v 1.4 2014/08/30 10:32:59 polynomial-c Exp $
 
 EAPI=5
 
@@ -20,8 +20,7 @@ RDEPEND=">=sys-libs/ncurses-5.2
 	selinux? ( sec-policy/selinux-screen )"
 DEPEND="${RDEPEND}
 	sys-apps/texinfo"
-RDEPEND="${RDEPEND}
-	>=sys-apps/openrc-0.11.6"
+RDEPEND="${RDEPEND}"
 
 pkg_setup() {
 	# Make sure utmp group exists, as it's used later on.
@@ -44,7 +43,7 @@ src_prepare() {
 		-e "s:/etc/utmp:${EPREFIX}/var/run/utmp:g" \
 		-e "s:/local/screens/S-:${EPREFIX}/tmp/screen/S-:g" \
 		doc/screen.1 \
-		|| die "sed doc/screen.1 failed"
+		|| die
 
 	# reconfigure
 	eautoreconf
@@ -67,11 +66,14 @@ src_configure() {
 		--enable-telnet \
 		--enable-colors256 \
 		$(use_enable pam)
+}
 
-	LC_ALL=POSIX emake term.h
+src_compile() {
+	LC_ALL=POSIX emake comm.h term.h
 	emake osdef.h
 
 	emake -C doc screen.info
+	default
 }
 
 src_install() {
@@ -120,7 +122,7 @@ pkg_postinst() {
 		elog "applications. Please check /etc/screenrc for information on these changes."
 	fi
 
-	# add /var/run/screen in case it doesn't exist yet. This should solve
+	# Add /tmp/screen in case it doesn't exist yet. This should solve
 	# problems like bug #508634 where tmpfiles.d isn't in effect.
 	local rundir="${EROOT%/}/tmp/screen"
 	if [[ ! -d ${rundir} ]] ; then

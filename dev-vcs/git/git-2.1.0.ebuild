@@ -1,6 +1,6 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-vcs/git/git-2.1.0.ebuild,v 1.2 2014/08/21 05:16:37 polynomial-c Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-vcs/git/git-2.1.0.ebuild,v 1.5 2014/08/30 08:59:38 polynomial-c Exp $
 
 EAPI=5
 
@@ -67,7 +67,7 @@ RDEPEND="${CDEPEND}
 			dev-perl/Net-SMTP-SSL
 			dev-perl/Authen-SASL
 			cgi? ( virtual/perl-CGI highlight? ( app-text/highlight ) )
-			cvs? ( >=dev-vcs/cvsps-2.1 dev-perl/DBI dev-perl/DBD-SQLite )
+			cvs? ( >=dev-vcs/cvsps-2.1:0 dev-perl/DBI dev-perl/DBD-SQLite )
 			subversion? ( dev-vcs/subversion[-dso,perl] dev-perl/libwww-perl dev-perl/TermReadKey )
 			)
 	python? ( gtk?
@@ -110,6 +110,8 @@ REQUIRED_USE="
 	gtk? ( python )
 	python? ( ${PYTHON_REQUIRED_USE} )
 "
+
+RESTRICT="test" # 520270
 
 pkg_setup() {
 	if use subversion && has_version "dev-vcs/subversion[dso]"; then
@@ -445,13 +447,6 @@ src_install() {
 		dodoc svn-fe.txt
 		use doc && doman svn-fe.1 && dohtml svn-fe.html
 		cd "${S}"
-	fi
-
-	# remote-helpers
-	if use python ; then
-		python_scriptinto /usr/libexec/git-core/
-		python_doscript "${S}"/contrib/remote-helpers/git-remote-{bzr,hg}
-		python_optimize
 	fi
 
 	dodir /usr/share/${PN}/contrib

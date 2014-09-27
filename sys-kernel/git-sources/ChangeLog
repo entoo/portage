@@ -1,6 +1,31 @@
 # ChangeLog for sys-kernel/git-sources
 # Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-kernel/git-sources/ChangeLog,v 1.1395 2014/08/17 00:21:58 mpagano Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-kernel/git-sources/ChangeLog,v 1.1400 2014/09/22 11:00:07 ago Exp $
+
+*git-sources-3.17_rc6 (22 Sep 2014)
+
+  22 Sep 2014; Agostino Sarubbo <ago@gentoo.org> +git-sources-3.17_rc6.ebuild:
+  Automated version bump to 3.17_rc6
+
+*git-sources-3.17_rc5 (15 Sep 2014)
+
+  15 Sep 2014; Agostino Sarubbo <ago@gentoo.org> +git-sources-3.17_rc5.ebuild:
+  Automated version bump to 3.17_rc5
+
+*git-sources-3.17_rc4 (09 Sep 2014)
+
+  09 Sep 2014; Agostino Sarubbo <ago@gentoo.org> +git-sources-3.17_rc4.ebuild:
+  Version bump to 3.17_rc4
+
+*git-sources-3.17_rc3 (01 Sep 2014)
+
+  01 Sep 2014; Agostino Sarubbo <ago@gentoo.org> +git-sources-3.17_rc3.ebuild:
+  Version bump to 3.17_rc3
+
+*git-sources-3.17_rc2 (26 Aug 2014)
+
+  26 Aug 2014; Agostino Sarubbo <ago@gentoo.org> +git-sources-3.17_rc2.ebuild:
+  Version bump to 3.17_rc2
 
 *git-sources-3.17_rc1 (17 Aug 2014)
 

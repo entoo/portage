@@ -1,6 +1,60 @@
 # ChangeLog for dev-python/django
 # Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/django/ChangeLog,v 1.136 2014/06/08 13:07:50 djc Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-python/django/ChangeLog,v 1.147 2014/09/17 13:02:10 idella4 Exp $
+
+  17 Sep 2014; Ian Delaney <idella4@gentoo.org> -django-1.4.14.ebuild,
+  -django-1.5.9.ebuild, -django-1.6.6.ebuild, django-1.6.7.ebuild,
+  django-1.7.ebuild:
+  syntax fix, drop vulnerable versions wrt Bug #521324
+
+  14 Sep 2014; Ian Delaney <idella4@gentoo.org> -files/1.7-test_serialize.patch:
+  remove redundant upstream patch
+
+*django-1.7 (14 Sep 2014)
+
+  14 Sep 2014; Ian Delaney <idella4@gentoo.org> +django-1.7.ebuild,
+  +files/1.7-test_serialize.patch:
+  bump; upgrade deps, tidy test phase
+
+  13 Sep 2014; Agostino Sarubbo <ago@gentoo.org> django-1.4.15.ebuild,
+  django-1.5.10.ebuild, django-1.6.7.ebuild:
+  Stable for x86, wrt bug #521324
+
+  13 Sep 2014; Agostino Sarubbo <ago@gentoo.org> django-1.4.15.ebuild,
+  django-1.5.10.ebuild, django-1.6.7.ebuild:
+  Stable for amd64, wrt bug #521324
+
+*django-1.6.7 (09 Sep 2014)
+*django-1.4.15 (09 Sep 2014)
+*django-1.5.10 (09 Sep 2014)
+
+  09 Sep 2014; Ian Delaney <idella4@gentoo.org> +django-1.4.15.ebuild,
+  +django-1.5.10.ebuild, +django-1.6.7.ebuild, django-9999.ebuild:
+  bumps
+
+  04 Sep 2014; Ian Delaney <idella4@gentoo.org> -django-1.4.13.ebuild,
+  -django-1.5.8.ebuild, -django-1.6.5.ebuild:
+  drop vulnerable versions wrt Bug #521324
+
+  02 Sep 2014; Agostino Sarubbo <ago@gentoo.org> django-1.4.14.ebuild,
+  django-1.5.9.ebuild, django-1.6.6.ebuild:
+  Stable for x86, wrt bug #521324
+
+  02 Sep 2014; Agostino Sarubbo <ago@gentoo.org> django-1.4.14.ebuild,
+  django-1.5.9.ebuild, django-1.6.6.ebuild:
+  Stable for amd64, wrt bug #521324
+
+*django-1.5.9 (01 Sep 2014)
+*django-1.4.14 (01 Sep 2014)
+
+  01 Sep 2014; Ian Delaney <idella4@gentoo.org> +django-1.4.14.ebuild,
+  +django-1.5.9.ebuild:
+  bumps
+
+*django-1.6.6 (26 Aug 2014)
+
+  26 Aug 2014; Ian Delaney <idella4@gentoo.org> +django-1.6.6.ebuild:
+  bump
 
   08 Jun 2014; Dirkjan Ochtman <djc@gentoo.org> -django-1.4.11.ebuild,
   -django-1.6.4.ebuild, -files/django-1.3.1-djangodocs_extension.patch:

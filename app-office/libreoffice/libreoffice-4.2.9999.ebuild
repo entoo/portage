@@ -1,6 +1,6 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-office/libreoffice/libreoffice-4.2.9999.ebuild,v 1.14 2014/08/15 09:10:14 scarabeus Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-office/libreoffice/libreoffice-4.2.9999.ebuild,v 1.26 2014/09/18 20:59:56 dilfridge Exp $
 
 EAPI=5
 
@@ -97,17 +97,17 @@ COMMON_DEPEND="
 	app-arch/unzip
 	>=app-text/hunspell-1.3.2-r3
 	app-text/mythes
-	app-text/libabw
+	=app-text/libabw-0.0*
 	>=app-text/libexttextcat-3.2
-	app-text/libebook
-	app-text/libetonyek
+	=app-text/libebook-0.0*
+	=app-text/libetonyek-0.0*
 	app-text/liblangtag
-	app-text/libmspub
-	>=app-text/libmwaw-0.2
-	>=app-text/libodfgen-0.0.3
+	=app-text/libmspub-0.0*
+	=app-text/libmwaw-0.2*
+	=app-text/libodfgen-0.0*
 	app-text/libwpd:0.9[tools]
 	app-text/libwpg:0.2
-	>=app-text/libwps-0.2.2
+	=app-text/libwps-0.2*
 	>=app-text/poppler-0.16:=[xpdf-headers(+),cxx]
 	>=dev-cpp/clucene-2.3.3.4-r2
 	dev-cpp/libcmis:0.4
@@ -117,7 +117,7 @@ COMMON_DEPEND="
 	>=dev-libs/hyphen-2.7.1
 	>=dev-libs/icu-4.8.1.1:=
 	>=dev-libs/libatomic_ops-7.2d
-	=dev-libs/liborcus-0.5*:=
+	=dev-libs/liborcus-0.5*
 	>=dev-libs/nspr-4.8.8
 	>=dev-libs/nss-3.12.9
 	>=dev-lang/perl-5.0
@@ -129,9 +129,9 @@ COMMON_DEPEND="
 	>=media-libs/harfbuzz-0.9.18:=[icu(+)]
 	media-libs/lcms:2
 	>=media-libs/libpng-1.4
-	>=media-libs/libcdr-0.0.5
-	media-libs/libfreehand
-	media-libs/libvisio
+	=media-libs/libcdr-0.0*
+	=media-libs/libfreehand-0.0*
+	=media-libs/libvisio-0.0*
 	>=net-misc/curl-7.21.4
 	net-nds/openldap
 	sci-mathematics/lpsolve
@@ -237,6 +237,9 @@ DEPEND="${COMMON_DEPEND}
 PATCHES=(
 	# not upstreamable stuff
 	"${FILESDIR}/${PN}-3.7-system-pyuno.patch"
+
+	# from libreoffice-4-3 branch
+	"${FILESDIR}/${PN}-4.2.6.3-jpeg9.patch"
 
 	# staged for git master
 	"${FILESDIR}/${PN}-4.2.0.4-curl-config.patch"

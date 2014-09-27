@@ -1,6 +1,64 @@
 # ChangeLog for dev-lang/php
 # Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-lang/php/ChangeLog,v 1.876 2014/08/22 09:29:01 olemarkus Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-lang/php/ChangeLog,v 1.890 2014/09/19 12:14:27 olemarkus Exp $
+
+*php-5.4.33 (19 Sep 2014)
+*php-5.5.17 (19 Sep 2014)
+
+  19 Sep 2014; Ole Markus With <olemarkus@gentoo.org> +php-5.4.33.ebuild,
+  +php-5.5.17.ebuild:
+  Version bump of php:5.5 and php:5.4
+
+*php-5.6.0 (28 Aug 2014)
+
+  28 Aug 2014; Ole Markus With <olemarkus@gentoo.org> +php-5.6.0.ebuild,
+  -php-5.6.0_alpha1-r1.ebuild, -php-5.6.0_alpha1.ebuild,
+  -php-5.6.0_beta1.ebuild, -php-5.6.0_beta2.ebuild, -php-5.6.0_rc1.ebuild:
+  Add final version of php 5.6.0
+
+  26 Aug 2014; Agostino Sarubbo <ago@gentoo.org> -php-5.3.28-r3.ebuild,
+  -php-5.4.30.ebuild, -php-5.4.31.ebuild, -php-5.5.15.ebuild:
+  Remove old
+
+  26 Aug 2014; Agostino Sarubbo <ago@gentoo.org> php-5.4.32.ebuild,
+  php-5.5.16.ebuild:
+  Stable for ppc64, wrt bug #513032
+
+  26 Aug 2014; Agostino Sarubbo <ago@gentoo.org> php-5.4.32.ebuild,
+  php-5.5.16.ebuild:
+  Stable for ppc, wrt bug #513032
+
+  25 Aug 2014; Raúl Porcel <armin76@gentoo.org> php-5.3.29.ebuild,
+  php-5.4.32.ebuild, php-5.5.16.ebuild:
+  ia64/sparc stable wrt #519932, #513032
+
+  24 Aug 2014; Jeroen Roovers <jer@gentoo.org> php-5.4.32.ebuild:
+  Stable for HPPA (bug #513032).
+
+  24 Aug 2014; Jeroen Roovers <jer@gentoo.org> php-5.5.16.ebuild:
+  Stable for HPPA (bug #513032).
+
+  24 Aug 2014; Agostino Sarubbo <ago@gentoo.org> php-5.3.29.ebuild:
+  Stable for arm, wrt bug #519932
+
+  24 Aug 2014; Agostino Sarubbo <ago@gentoo.org> php-5.4.32.ebuild,
+  php-5.5.16.ebuild:
+  Stable for arm, wrt bug #513032
+
+  24 Aug 2014; Agostino Sarubbo <ago@gentoo.org> php-5.3.29.ebuild:
+  Stable for alpha, wrt bug #519932
+
+  24 Aug 2014; Agostino Sarubbo <ago@gentoo.org> php-5.4.32.ebuild,
+  php-5.5.16.ebuild:
+  Stable for alpha, wrt bug #513032
+
+  23 Aug 2014; Agostino Sarubbo <ago@gentoo.org> php-5.4.32.ebuild,
+  php-5.5.16.ebuild:
+  Stable for x86, wrt bug #513032
+
+  23 Aug 2014; Agostino Sarubbo <ago@gentoo.org> php-5.4.32.ebuild,
+  php-5.5.16.ebuild:
+  Stable for amd64, wrt bug #513032
 
 *php-5.5.16 (22 Aug 2014)
 

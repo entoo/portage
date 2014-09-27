@@ -1,6 +1,39 @@
 # ChangeLog for dev-python/python-docs
 # Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/python-docs/ChangeLog,v 1.192 2014/03/23 15:54:48 idella4 Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-python/python-docs/ChangeLog,v 1.197 2014/09/11 02:48:08 patrick Exp $
+
+  11 Sep 2014; Patrick Lauer <patrick@gentoo.org> python-docs-3.2.5.ebuild:
+  Mark python-docs:3.2 stable to silence repoman
+
+*python-docs-3.2.5 (09 Sep 2014)
+
+  09 Sep 2014; Ian Delaney <idella4@gentoo.org> +python-docs-3.2.5.ebuild:
+  re-add version 3.2.5
+
+*python-docs-3.4.1 (08 Sep 2014)
+*python-docs-2.7.7 (08 Sep 2014)
+*python-docs-2.7.8 (08 Sep 2014)
+
+  08 Sep 2014; Ian Delaney <idella4@gentoo.org> +python-docs-2.7.7.ebuild,
+  +python-docs-2.7.8.ebuild, +python-docs-3.4.1.ebuild,
+  -python-docs-2.4.4-r1.ebuild, -python-docs-2.5.4-r1.ebuild,
+  -python-docs-2.6.8.ebuild, -python-docs-2.6.9.ebuild,
+  -python-docs-3.1.5.ebuild, -python-docs-3.2.3.ebuild,
+  -python-docs-3.2.4.ebuild, -python-docs-3.2.5.ebuild:
+  bumps; rm some very old
+
+*python-docs-3.4.0-r1 (04 Sep 2014)
+*python-docs-2.7.6-r1 (04 Sep 2014)
+*python-docs-3.3.5-r1 (04 Sep 2014)
+
+  04 Sep 2014; Ian Delaney <idella4@gentoo.org> +python-docs-2.7.6-r1.ebuild,
+  +python-docs-3.3.5-r1.ebuild, +python-docs-3.4.0-r1.ebuild,
+  python-docs-2.7.6.ebuild, python-docs-3.4.0.ebuild:
+  switch prior changes to revbumps
+
+  02 Sep 2014; Ian Delaney <idella4@gentoo.org> python-docs-2.7.6.ebuild,
+  python-docs-3.3.5.ebuild, python-docs-3.4.0.ebuild:
+  add install of objects.inv for most recent py2.7,3.3,3.4 wrt to Bug #521768
 
 *python-docs-3.3.5 (23 Mar 2014)
 *python-docs-3.4.0 (23 Mar 2014)

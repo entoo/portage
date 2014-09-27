@@ -1,6 +1,55 @@
 # ChangeLog for sys-apps/portage
 # Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/portage/ChangeLog,v 1.1403 2014/08/12 19:54:39 dolsen Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/portage/ChangeLog,v 1.1413 2014/09/26 20:32:03 dolsen Exp $
+
+*portage-2.2.8-r2 (26 Sep 2014)
+
+  26 Sep 2014; Brian Dolbec <dolsen@gentoo.org> -portage-2.1.12.2.ebuild,
+  -portage-2.2.8-r1.ebuild, +portage-2.2.8-r2.ebuild,
+  portage-2.2.14_rc1.ebuild, portage-9999.ebuild:
+  Update the bash dep bug # 523768, remove 1 more old version
+
+*portage-2.2.14_rc1 (26 Sep 2014)
+
+  26 Sep 2014; Brian Dolbec <dolsen@gentoo.org> -portage-2.1.6.7_p1.ebuild,
+  -portage-2.2.1.ebuild, -portage-2.2.7.ebuild, -portage-2.2.10.ebuild,
+  -portage-2.2.11-r1.ebuild, -portage-2.2.12-r1.ebuild, -portage-2.2.13.ebuild,
+  +portage-2.2.14_rc1.ebuild, portage-9999.ebuild:
+  Version bump, cleanout old. Move sbin relocation code from pkg_preinst() to
+  python_install_all() for 9999,
+
+  26 Sep 2014; Brian Dolbec <dolsen@gentoo.org> portage-9999.ebuild:
+  Move the admin scripts to /usr/sbin/ in pkg_preinst
+
+  26 Sep 2014; Brian Dolbec <dolsen@gentoo.org> portage-9999.ebuild:
+  Add the deprecation /usr/sbin/ symlinks. Comment out the preinst sanity check
+  untill fixed for the new install method.
+
+  17 Sep 2014; Zac Medico <zmedico@gentoo.org> portage-2.2.13.ebuild:
+  Fix last commit to account for PYTHON_TARGETS.
+
+  17 Sep 2014; Zac Medico <zmedico@gentoo.org> portage-2.2.13.ebuild:
+  Recompile the emaint module with lower optimization than the distutils-r1
+  default, since emaint breaks when __doc__ is optimized away.
+
+*portage-2.2.13 (16 Sep 2014)
+
+  16 Sep 2014; Brian Dolbec <dolsen@gentoo.org> +portage-2.2.13.ebuild:
+  New portage release complete with a new setup.py build system and new EAPI 5
+  ebuild. Bugs fixed: 43896, 520542, 515230, 508762, 522362, 507482, 520950,
+  520752, 520378, 522652, 510270.
+
+  12 Sep 2014; Michał Górny <mgorny@gentoo.org> portage-9999.ebuild:
+  Restore correct git repo.
+
+  11 Sep 2014; Michał Górny <mgorny@gentoo.org> portage-9999.ebuild:
+  Switch to distutils-r1 now that setup.py is in git.
+
+*portage-2.2.12-r1 (31 Aug 2014)
+
+  31 Aug 2014; Julian Ospald <hasufell@gentoo.org> +portage-2.2.12-r1.ebuild:
+  revbump to EAPI=5 to fix broken dep calculation wrt #506158, as discussed
+  with mgorny and bernalex
 
 *portage-2.2.12 (12 Aug 2014)
 

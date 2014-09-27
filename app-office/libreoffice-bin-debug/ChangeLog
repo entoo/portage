@@ -1,6 +1,30 @@
 # ChangeLog for app-office/libreoffice-bin-debug
 # Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-office/libreoffice-bin-debug/ChangeLog,v 1.60 2014/08/10 18:15:46 slyfox Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-office/libreoffice-bin-debug/ChangeLog,v 1.65 2014/09/19 09:02:16 dilfridge Exp $
+
+  19 Sep 2014; Andreas K. Huettel <dilfridge@gentoo.org>
+  -libreoffice-bin-debug-4.2.5.2.ebuild:
+  Remove old
+
+  19 Sep 2014; Agostino Sarubbo <ago@gentoo.org>
+  libreoffice-bin-debug-4.2.6.3.ebuild:
+  Stable for x86, wrt bug #522060
+
+*libreoffice-bin-debug-4.2.6.3-r1 (18 Sep 2014)
+
+  18 Sep 2014; Andreas K. Huettel <dilfridge@gentoo.org>
+  +libreoffice-bin-debug-4.2.6.3-r1.ebuild:
+  Add binary version for poppler-0.26 and icu-53
+
+  18 Sep 2014; Agostino Sarubbo <ago@gentoo.org>
+  libreoffice-bin-debug-4.2.6.3.ebuild:
+  Stable for amd64, wrt bug #522060
+
+*libreoffice-bin-debug-4.2.6.3 (11 Sep 2014)
+
+  11 Sep 2014; Andreas K. Huettel <dilfridge@gentoo.org>
+  +libreoffice-bin-debug-4.2.6.3.ebuild:
+  Version bump for bug 522060
 
   10 Aug 2014; Sergei Trofimovich <slyfox@gentoo.org>
   libreoffice-bin-debug-4.2.5.2.ebuild:

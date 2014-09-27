@@ -1,6 +1,50 @@
 # ChangeLog for app-office/libreoffice-l10n
 # Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-office/libreoffice-l10n/ChangeLog,v 1.112 2014/08/10 18:16:21 slyfox Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-office/libreoffice-l10n/ChangeLog,v 1.121 2014/09/19 09:01:04 dilfridge Exp $
+
+  19 Sep 2014; Andreas K. Huettel <dilfridge@gentoo.org>
+  -libreoffice-l10n-4.2.5.2.ebuild:
+  Remove old
+
+  19 Sep 2014; Agostino Sarubbo <ago@gentoo.org>
+  libreoffice-l10n-4.2.6.3-r1.ebuild:
+  Stable for x86, wrt bug #522060
+
+  18 Sep 2014; Agostino Sarubbo <ago@gentoo.org>
+  libreoffice-l10n-4.2.6.3-r1.ebuild:
+  Stable for amd64, wrt bug #522060
+
+*libreoffice-l10n-4.3.1.2 (16 Sep 2014)
+
+  16 Sep 2014; Andreas K. Huettel <dilfridge@gentoo.org>
+  +libreoffice-l10n-4.3.1.2.ebuild:
+  Version bump, thanks to Andreas Sturmlechner
+
+  13 Sep 2014; Andreas K. Huettel <dilfridge@gentoo.org>
+  -libreoffice-l10n-4.2.6.2.ebuild:
+  Remove old
+
+*libreoffice-l10n-4.2.6.3-r1 (10 Sep 2014)
+
+  10 Sep 2014; Andreas K. Huettel <dilfridge@gentoo.org>
+  -libreoffice-l10n-4.2.6.3.ebuild, +libreoffice-l10n-4.2.6.3-r1.ebuild:
+  Use updated translation files, also fixes bug 521390
+
+  10 Sep 2014; Andreas K. Huettel <dilfridge@gentoo.org>
+  libreoffice-l10n-4.2.6.3.ebuild:
+  Hardcode version in path, bug 522470
+
+*libreoffice-l10n-4.2.6.3 (09 Sep 2014)
+
+  09 Sep 2014; Andreas K. Huettel <dilfridge@gentoo.org>
+  +libreoffice-l10n-4.2.6.3.ebuild:
+  Version bump for bug 522060
+
+*libreoffice-l10n-4.2.6.2 (23 Aug 2014)
+
+  23 Aug 2014; Tomáš Chvátal <scarabeus@gentoo.org>
+  +libreoffice-l10n-4.2.6.2.ebuild:
+  Version bump to 4.2.6 fixes bug#520282.
 
   10 Aug 2014; Sergei Trofimovich <slyfox@gentoo.org>
   libreoffice-l10n-4.2.5.2.ebuild:

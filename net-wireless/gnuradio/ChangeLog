@@ -1,6 +1,34 @@
 # ChangeLog for net-wireless/gnuradio
 # Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-wireless/gnuradio/ChangeLog,v 1.50 2014/08/19 02:31:49 zerochaos Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-wireless/gnuradio/ChangeLog,v 1.55 2014/09/11 11:33:48 kensington Exp $
+
+  11 Sep 2014; Michael Palimaka <kensington@gentoo.org> gnuradio-3.7.4.1.ebuild,
+  gnuradio-3.7.5.ebuild, gnuradio-9999.ebuild:
+  Pin dev-qt/qtcore to SLOT 4.
+
+  01 Sep 2014; Chí-Thanh Christopher Nguyễn <chithanh@gentoo.org>
+  gnuradio-3.7.4.1.ebuild, gnuradio-3.7.5.ebuild, gnuradio-9999.ebuild:
+  Add missing ? in REQUIRED_USE, bug #521900.
+
+*gnuradio-3.7.4.1 (31 Aug 2014)
+*gnuradio-3.7.5 (31 Aug 2014)
+
+  31 Aug 2014; Rick Farina <zerochaos@gentoo.org> +gnuradio-3.7.4.1.ebuild,
+  +gnuradio-3.7.5.ebuild, -gnuradio-3.7.4-r1.ebuild, gnuradio-9999.ebuild:
+  version bump, dep cleanup
+
+*gnuradio-3.7.4-r1 (25 Aug 2014)
+
+  25 Aug 2014; Rick Farina <zerochaos@gentoo.org>
+  +files/gnuradio-3.7.4-include_stringh.patch, +gnuradio-3.7.4-r1.ebuild,
+  -files/include_stringh.patch, -gnuradio-3.7.4.ebuild, gnuradio-9999.ebuild:
+  fix bug in qtgui where we included qwt5 but linked to qwt6, fix missing
+  include for string.h
+
+  24 Aug 2014; Rick Farina <zerochaos@gentoo.org> +files/include_stringh.patch,
+  gnuradio-3.7.4.ebuild, gnuradio-9999.ebuild, metadata.xml:
+  update VCS ebuild to remove as much automagic as possible, audio is still
+  automagic
 
   18 Aug 2014; Rick Farina <zerochaos@gentoo.org> gnuradio-3.7.4.ebuild,
   gnuradio-9999.ebuild:

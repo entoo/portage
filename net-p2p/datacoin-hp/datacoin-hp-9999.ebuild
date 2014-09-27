@@ -1,6 +1,6 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-p2p/datacoin-hp/datacoin-hp-9999.ebuild,v 1.3 2014/08/10 20:36:24 slyfox Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-p2p/datacoin-hp/datacoin-hp-9999.ebuild,v 1.5 2014/08/28 22:52:09 blueness Exp $
 
 EAPI=5
 
@@ -18,8 +18,8 @@ EGIT_REPO_URI="https://github.com/foo1inge/${PN}.git"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
-IUSE="bash-completion examples upnp ipv6 examples logrotate hardened"
+KEYWORDS=""
+IUSE="examples upnp ipv6 examples logrotate hardened"
 
 RDEPEND="
 	dev-libs/boost[threads(+)]
@@ -108,9 +108,8 @@ src_install() {
 	newman contrib/debian/manpages/bitcoind.1 ${MyPN}.1
 	newman contrib/debian/manpages/bitcoin.conf.5 datacoin.conf.5
 
-	if use bash-completion; then
-		newbashcomp contrib/bitcoind.bash-completion ${PN}.bash-completion
-	fi
+	sed -i -e 's/bitcoin/datacoin-hp/g' contrib/bitcoind.bash-completion
+	newbashcomp contrib/bitcoind.bash-completion ${PN}.bash-completion
 
 	if use examples; then
 		docinto examples

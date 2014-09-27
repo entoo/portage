@@ -1,6 +1,6 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sec-policy/selinux-base-policy/selinux-base-policy-9999.ebuild,v 1.10 2014/08/09 19:34:19 swift Exp $
+# $Header: /var/cvsroot/gentoo-x86/sec-policy/selinux-base-policy/selinux-base-policy-9999.ebuild,v 1.14 2014/08/30 20:20:47 swift Exp $
 EAPI="5"
 
 inherit eutils
@@ -131,4 +131,15 @@ pkg_postinst() {
 
 		semodule -s ${i} -b base.pp ${COMMAND} || die "Failed to load in base and modules ${MODS} in the $i policy store"
 	done
+
+	# Relabel depending packages
+	PKGSET="";
+	if [ -x /usr/bin/qdepends ] ; then
+		PKGSET=$(/usr/bin/qdepends -Cq -Q ${CATEGORY}/${PN} | grep -v 'sec-policy/selinux-');
+	elif [ -x /usr/bin/equery ] ; then
+		PKGSET=$(/usr/bin/equery -Cq depends ${CATEGORY}/${PN} | grep -v 'sec-policy/selinux-');
+	fi
+	if [ -n "${PKGSET}" ] ; then
+		rlpkg ${PKGSET};
+	fi
 }

@@ -1,10 +1,10 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/paxctl/paxctl-0.8.ebuild,v 1.1 2014/05/05 12:20:33 blueness Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/paxctl/paxctl-0.8.ebuild,v 1.2 2014/09/03 04:26:55 zerochaos Exp $
 
 EAPI="5"
 
-inherit toolchain-funcs
+inherit toolchain-funcs eutils
 
 DESCRIPTION="Manages various PaX related program header flags for Elf32, Elf64, binaries"
 SRC_URI="http://pax.grsecurity.net/${P}.tar.gz"
@@ -22,6 +22,7 @@ src_prepare() {
 	sed \
 		"s:--owner 0 --group 0::g" \
 		-i Makefile || die
+	epatch_user
 }
 
 src_compile() {

@@ -1,6 +1,18 @@
 # ChangeLog for net-misc/aria2
 # Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/aria2/ChangeLog,v 1.97 2014/08/21 14:19:37 armin76 Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-misc/aria2/ChangeLog,v 1.100 2014/08/29 07:14:55 mgorny Exp $
+
+  29 Aug 2014; Michał Górny <mgorny@gentoo.org> aria2-1.18.7.ebuild:
+  Version bump for a number of bugfixes.
+
+*aria2-1.18.7 (29 Aug 2014)
+
+  29 Aug 2014; Michał Górny <mgorny@gentoo.org> +aria2-1.18.7.ebuild:
+  Version bump for a number of bugfixes.
+
+  29 Aug 2014; Anthony G. Basile <blueness@gentoo.org> aria2-1.18.0.ebuild,
+  aria2-1.18.5.ebuild:
+  Keyword ~ppc ~ppc64, bug #488294
 
   21 Aug 2014; Raúl Porcel <armin76@gentoo.org> aria2-1.18.0.ebuild,
   aria2-1.18.5.ebuild:

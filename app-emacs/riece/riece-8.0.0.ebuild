@@ -1,6 +1,6 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-emacs/riece/riece-8.0.0.ebuild,v 1.6 2012/09/30 18:07:22 armin76 Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-emacs/riece/riece-8.0.0.ebuild,v 1.8 2014/08/30 09:46:48 ulm Exp $
 
 EAPI=4
 
@@ -19,22 +19,23 @@ RESTRICT="test"
 SITEFILE="50${PN}-gentoo.el"
 
 src_configure() {
-	econf --with-lispdir="${SITELISP}"
+	econf --with-lispdir="${EPREFIX}${SITELISP}"
 }
 
 src_compile() {
 	default
 }
 
-src_install () {
-	einstall lispdir="${D}/${SITELISP}"
-	elisp-site-file-install "${FILESDIR}/${SITEFILE}" || die
-
+src_install() {
+	emake DESTDIR="${D}" \
+		lispdir="${ED}${SITELISP}" \
+		install
+	elisp-site-file-install "${FILESDIR}/${SITEFILE}"
 	dodoc AUTHORS NEWS README doc/HACKING lisp/ChangeLog*
 
 	if use linguas_ja; then
 		dodoc NEWS.ja README.ja doc/HACKING.ja
 	else
-		rm -f "${D}"/usr/share/info/riece-ja.info*
+		rm -f "${ED}"/usr/share/info/riece-ja.info*
 	fi
 }

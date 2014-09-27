@@ -1,6 +1,20 @@
 # ChangeLog for net-analyzer/nagios
 # Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/net-analyzer/nagios/ChangeLog,v 1.113 2014/08/03 16:45:03 tgall Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-analyzer/nagios/ChangeLog,v 1.117 2014/09/06 15:36:19 ago Exp $
+
+  06 Sep 2014; Agostino Sarubbo <ago@gentoo.org> nagios-3.5.1.ebuild:
+  Stable for x86, wrt bug #501200
+
+  06 Sep 2014; Agostino Sarubbo <ago@gentoo.org> nagios-3.5.1.ebuild:
+  Stable for amd64, wrt bug #501200
+
+  04 Sep 2014; Jeroen Roovers <jer@gentoo.org> nagios-3.5.1.ebuild:
+  Stable for HPPA (bug #501200).
+
+*nagios-3.5.1 (02 Sep 2014)
+
+  02 Sep 2014; Chris Reffett <creffett@gentoo.org> +nagios-3.5.1.ebuild:
+  Bump along with nagios-core
 
   03 Aug 2014;  <tgall@gentoo.org> nagios-3.3.1.ebuild:
   arm64, initial support

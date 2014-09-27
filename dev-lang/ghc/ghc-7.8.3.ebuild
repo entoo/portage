@@ -1,6 +1,6 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-lang/ghc/ghc-7.8.3.ebuild,v 1.7 2014/08/11 10:18:57 slyfox Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-lang/ghc/ghc-7.8.3.ebuild,v 1.10 2014/09/05 10:40:45 slyfox Exp $
 
 EAPI=5
 
@@ -97,8 +97,6 @@ DEPEND="${RDEPEND}
 PDEPEND="!ghcbootstrap? ( =app-admin/haskell-updater-1.2* )"
 
 REQUIRED_USE="?? ( ghcbootstrap binary )"
-# ia64 fails to return from STG GMP primitives (stage2 always SIGSEGVs)
-REQUIRED_USE+=" ia64? ( !gmp )"
 
 # yeah, top-level 'use' sucks. I'd like to have it in 'src_install()'
 use binary && QA_PREBUILT="*"
@@ -396,11 +394,19 @@ src_prepare() {
 
 		epatch "${FILESDIR}"/${PN}-7.8.1_rc1-libbfd.patch
 
-		epatch "${FILESDIR}"/${PN}-7.8.2-ia64-no-shared.patch
 		epatch "${FILESDIR}"/${PN}-7.8.2-cgen-constify.patch
 		epatch "${FILESDIR}"/${PN}-7.8.3-prim-lm.patch
 		# bug 518734
 		epatch "${FILESDIR}"/${PN}-7.6.3-preserve-inplace-xattr.patch
+		epatch "${FILESDIR}"/${PN}-7.8.3-unreg-lit.patch
+
+		# upstream backports
+		epatch "${FILESDIR}"/${PN}-7.8.3-linker-warn.patch
+		epatch "${FILESDIR}"/${PN}-7.8.3-deRefStablePtr.patch
+		epatch "${FILESDIR}"/${PN}-7.8.3-pic-asm.patch
+		epatch "${FILESDIR}"/${PN}-7.8.3-pic-sparc.patch
+		epatch "${FILESDIR}"/${PN}-7.8.3-cc-lang.patch
+		epatch "${FILESDIR}"/${PN}-7.8.3-ia64-prim.patch
 
 		if use prefix; then
 			# Make configure find docbook-xsl-stylesheets from Prefix

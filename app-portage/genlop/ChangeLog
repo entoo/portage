@@ -1,6 +1,15 @@
 # ChangeLog for app-portage/genlop
-# Copyright 1999-2013 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/app-portage/genlop/ChangeLog,v 1.82 2013/01/21 21:59:34 fuzzyray Exp $
+# Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/app-portage/genlop/ChangeLog,v 1.85 2014/09/24 12:37:03 nimiux Exp $
+
+  24 Sep 2014; Chema Alonso <nimiux@gentoo.org> genlop-0.30.9-r1.ebuild:
+  Stable for amd64 wrt bug #521284
+
+  14 Sep 2014; Markus Meier <maekke@gentoo.org> genlop-0.30.9-r1.ebuild:
+  arm stable, bug #521284
+
+  28 Aug 2014; Jeroen Roovers <jer@gentoo.org> genlop-0.30.9-r1.ebuild:
+  Stable for HPPA (bug #521284).
 
 *genlop-0.30.9-r1 (21 Jan 2013)
 

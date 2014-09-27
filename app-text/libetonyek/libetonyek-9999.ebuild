@@ -1,6 +1,6 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-text/libetonyek/libetonyek-9999.ebuild,v 1.3 2014/01/15 08:00:39 radhermit Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-text/libetonyek/libetonyek-9999.ebuild,v 1.4 2014/09/13 08:57:12 dilfridge Exp $
 
 EAPI=5
 
@@ -9,18 +9,18 @@ inherit base eutils
 [[ ${PV} == 9999 ]] && inherit autotools git-2
 
 DESCRIPTION="Library parsing Apple Keynote presentations"
-HOMEPAGE="http://www.freedesktop.org/wiki/Software/libetonyek"
-[[ ${PV} == 9999 ]] || SRC_URI="http://dev-www.libreoffice.org/src/${P}.tar.xz"
+HOMEPAGE="https://wiki.documentfoundation.org/DLP/Libraries/libetonyek"
+[[ ${PV} == 9999 ]] || SRC_URI="http://dev-www.libreoffice.org/src/${PN}/${P}.tar.xz"
 
 LICENSE="|| ( GPL-2+ LGPL-2.1 MPL-1.1 )"
 SLOT="0"
 [[ ${PV} == 9999 ]] || \
-KEYWORDS="~amd64 ~arm ~ppc ~x86"
+KEYWORDS="~amd64 ~x86"
 IUSE="doc static-libs test"
 
 RDEPEND="
-	app-text/libwpd:0.9
 	dev-libs/boost:=
+	dev-libs/librevenge
 	dev-libs/libxml2
 	sys-libs/zlib
 "

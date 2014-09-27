@@ -1,6 +1,55 @@
 # ChangeLog for mail-client/geary
 # Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/mail-client/geary/ChangeLog,v 1.18 2014/08/14 16:20:58 phajdan.jr Exp $
+# $Header: /var/cvsroot/gentoo-x86/mail-client/geary/ChangeLog,v 1.29 2014/09/20 14:17:15 hasufell Exp $
+
+*geary-0.8.0 (20 Sep 2014)
+
+  20 Sep 2014; Julian Ospald <hasufell@gentoo.org> +geary-0.8.0.ebuild:
+  version bump wrt #523286
+
+  19 Sep 2014; Julian Ospald <hasufell@gentoo.org> -geary-0.6.1.ebuild,
+  -files/geary-0.5.3-cflags.patch:
+  cleanup old
+
+  18 Sep 2014; Agostino Sarubbo <ago@gentoo.org> geary-0.6.3-r1.ebuild:
+  Stable for x86, wrt bug #522926
+
+  18 Sep 2014; Agostino Sarubbo <ago@gentoo.org> geary-0.6.3-r1.ebuild:
+  Stable for amd64, wrt bug #522926
+
+*geary-0.7.2-r1 (18 Sep 2014)
+*geary-0.6.3-r1 (18 Sep 2014)
+
+  18 Sep 2014; Julian Ospald <hasufell@gentoo.org> -geary-0.6.3.ebuild,
+  +geary-0.6.3-r1.ebuild, -geary-0.7.2.ebuild, +geary-0.7.2-r1.ebuild:
+  fix deps wrt #523106
+
+  16 Sep 2014; Julian Ospald <hasufell@gentoo.org> geary-0.6.3.ebuild:
+  fix dependencies wrt #522942
+
+  16 Sep 2014; Julian Ospald <hasufell@gentoo.org> -geary-0.6.0.ebuild,
+  -geary-0.7.0.ebuild, -geary-0.7.1.ebuild:
+  rm old
+
+*geary-0.6.3 (16 Sep 2014)
+
+  16 Sep 2014; Julian Ospald <hasufell@gentoo.org> +geary-0.6.3.ebuild,
+  +files/geary-0.6.3-cflags.patch:
+  security version bump wrt #522926
+
+  06 Sep 2014; Chema Alonso <nimiux@gentoo.org> geary-0.6.1.ebuild:
+  Stable for amd64 wrt bug #518202
+
+*geary-0.7.2 (05 Sep 2014)
+
+  05 Sep 2014; Julian Ospald <hasufell@gentoo.org> +geary-0.7.2.ebuild,
+  +files/geary-0.7.2-cflags.patch:
+  version bump
+
+*geary-0.7.1 (24 Aug 2014)
+
+  24 Aug 2014; Julian Ospald <hasufell@gentoo.org> +geary-0.7.1.ebuild:
+  version bump
 
   14 Aug 2014; Pawel Hajdan jr <phajdan.jr@gentoo.org> geary-0.6.1.ebuild:
   x86 stable wrt bug #518202

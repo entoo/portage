@@ -1,6 +1,6 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-cluster/nova/nova-9999.ebuild,v 1.17 2014/08/10 20:21:07 slyfox Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-cluster/nova/nova-9999.ebuild,v 1.18 2014/09/22 02:15:21 idella4 Exp $
 
 EAPI=5
 PYTHON_COMPAT=( python2_7 )
@@ -21,7 +21,9 @@ REQUIRED_USE="|| ( mysql postgres sqlite )
 DEPEND="dev-python/setuptools[${PYTHON_USEDEP}]
 		>=dev-python/pbr-0.6[${PYTHON_USEDEP}]
 		<dev-python/pbr-1.0[${PYTHON_USEDEP}]
-		app-admin/sudo"
+		app-admin/sudo
+		dev-python/mox[${PYTHON_USEDEP}]
+		dev-python/fixtures[${PYTHON_USEDEP}]"
 
 RDEPEND="sqlite? (
 			>=dev-python/sqlalchemy-0.8.0[sqlite,${PYTHON_USEDEP}]

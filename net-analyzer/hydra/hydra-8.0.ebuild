@@ -1,6 +1,6 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-analyzer/hydra/hydra-8.0.ebuild,v 1.2 2014/07/27 11:32:24 phajdan.jr Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-analyzer/hydra/hydra-8.0.ebuild,v 1.5 2014/09/09 18:58:11 nimiux Exp $
 
 EAPI=5
 inherit eutils toolchain-funcs
@@ -11,7 +11,7 @@ SRC_URI="http://freeworld.thc.org/releases/${P}.tar.gz"
 
 LICENSE="GPL-3"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc x86"
+KEYWORDS="amd64 ~ppc x86"
 IUSE="firebird gtk idn mysql ncp oracle pcre postgres ssl subversion"
 
 RDEPEND="
@@ -48,6 +48,8 @@ src_prepare() {
 		-e '/^OPTS/{s|=|+=|;s| -O3||}' \
 		-e '/ -o /s:$(OPTS):& $(LDFLAGS):g' \
 		Makefile.am || die
+
+	epatch "${FILESDIR}"/${P}-configure.patch
 }
 
 src_configure() {
@@ -70,7 +72,9 @@ src_configure() {
 
 	# Note: despite the naming convention, the top level script is not an
 	# autoconf-based script.
-	./configure \
+	export NCP_PATH=$(usex ncp /usr/$(get_libdir) '')
+	export NCP_IPATH=$(usex ncp /usr/include '')
+	sh configure \
 		--prefix=/usr \
 		--nostrip \
 		$(use gtk && echo --disable-xhydra) \
@@ -84,7 +88,7 @@ src_configure() {
 
 src_compile() {
 	tc-export CC
-	emake
+	emake XLIBPATHS=''
 	use gtk && emake -C hydra-gtk
 }
 

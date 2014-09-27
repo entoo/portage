@@ -1,6 +1,12 @@
 # ChangeLog for dev-python/six
 # Copyright 1999-2014 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-python/six/ChangeLog,v 1.48 2014/08/20 12:49:59 armin76 Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-python/six/ChangeLog,v 1.50 2014/09/07 19:21:54 floppym Exp $
+
+  07 Sep 2014; Mike Gilbert <floppym@gentoo.org> six-9999.ebuild:
+  Add python3.4 to live ebuild.
+
+  25 Aug 2014; Manuel Rüger <mrueg@gentoo.org> six-1.6.1.ebuild:
+  Mark amd64 stable. Bug #516408.
 
   20 Aug 2014; Raúl Porcel <armin76@gentoo.org> six-1.6.1.ebuild:
   alpha/ia64/sparc stable wrt #516408
